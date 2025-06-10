@@ -1,0 +1,13 @@
+/afs/cern.ch/user/c/chensel/ILD/workarea/May2025/Tomaz/install/lib/cmake/k4ProjectTemplate/headers_db.csv
+/afs/cern.ch/user/c/chensel/ILD/workarea/May2025/Tomaz/install/lib/cmake/k4ProjectTemplate/k4ProjectTemplateConfig.cmake
+/afs/cern.ch/user/c/chensel/ILD/workarea/May2025/Tomaz/install/lib/cmake/k4ProjectTemplate/k4ProjectTemplateConfigVersion.cmake
+/afs/cern.ch/user/c/chensel/ILD/workarea/May2025/Tomaz/install/include/k4ProjectTemplate/k4ProjectTemplateVersion.h
+/afs/cern.ch/user/c/chensel/ILD/workarea/May2025/Tomaz/install/lib/cmake/k4ProjectTemplate/k4ProjectTemplateTargets.cmake
+/afs/cern.ch/user/c/chensel/ILD/workarea/May2025/Tomaz/install/lib/cmake/k4ProjectTemplate/k4ProjectTemplateTargets-relwithdebinfo.cmake
+/afs/cern.ch/user/c/chensel/ILD/workarea/May2025/Tomaz/install/lib/libk4ProjectTemplatePlugins.so
+/afs/cern.ch/user/c/chensel/ILD/workarea/May2025/Tomaz/install/lib/k4ProjectTemplate.components
+/afs/cern.ch/user/c/chensel/ILD/workarea/May2025/Tomaz/install/python/example/k4ProjectTemplatePluginsConf.py
+/afs/cern.ch/user/c/chensel/ILD/workarea/May2025/Tomaz/install/python/example/__init__.py
+/afs/cern.ch/user/c/chensel/ILD/workarea/May2025/Tomaz/install/lib/k4ProjectTemplate.confdb
+/afs/cern.ch/user/c/chensel/ILD/workarea/May2025/Tomaz/install/lib/k4ProjectTemplate.confdb2
+/afs/cern.ch/user/c/chensel/ILD/workarea/May2025/Tomaz/install/lib/libk4ProjectTemplatePlugins.so

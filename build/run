@@ -1,0 +1,4 @@
+#!/bin/sh
+# Auto-generated script to set the environment before the execution of a command
+. /afs/cern.ch/user/c/chensel/ILD/workarea/May2025/Tomaz/build/k4projecttemplateenv.sh
+exec "$@"
