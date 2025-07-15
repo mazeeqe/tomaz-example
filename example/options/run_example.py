@@ -10,14 +10,16 @@ evtSvc.inputs = ["/afs/cern.ch/user/c/chensel/ILD/lcio_edm4hep/edm4hep/Dirac-Dst
 podioinput = PodioInput("InputReader")
 podioinput.collections = ["PandoraPFOs", "PrimaryVertex", "PandoraClusters", "MarlinTrkTracks", "EventHeader", "MCParticlesSkimmed"]
 
-
+# create a MCProducer instance
 producer = MCProducerAlg("MCProducer")
 producer.MCParticleColl = "MCParticlesSkimmed"
 producer.OutputLevel = INFO
 
+# create a MCConsumer instance
 consumer = MCConsumerAlg("MCConsumer")
 
 ApplicationMgr(
+    # provide list and order of algorithms
     TopAlg=[podioinput, producer, consumer],
     EvtSel="NONE",
     EvtMax=5,
