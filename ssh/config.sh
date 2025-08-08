@@ -6,12 +6,12 @@ DEFAULT_USER="bortolet"
 DEFAULT_HOST="naf-ilc.desy.de"
 
 # Path for syncing
-SRC_DIR="/home/mazeeqe/Documents/mestrado/code/input_files"
+SRC_DIR="/home/mazeeqe/Documents/mestrado/code/tomaz-example"
 DEST_DIR="/afs/desy.de/user/b/bortolet/code/"
 
 # Setup Commands
 SETUP_COMMANDS=(
-    "cd code/k4-project-template"
-    "source /cvmfs/sw.hsf.org/key4hep/setup.sh"
-    "k4_local_repo"
+    "source /cvmfs/sw.hsf.org/key4hep/setup.sh -r 2025-01-28"
+    "cd code/tomaz-example/"
+    "source setup.sh"
 )

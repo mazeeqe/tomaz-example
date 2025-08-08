@@ -8,7 +8,12 @@ evtSvc.inputs = ["/afs/desy.de/user/b/bortolet/code/input_files/Dirac-Dst-E250-e
 
 # Input: PODIO .root file with MCParticles
 podioinput = PodioInput("InputReader")
-podioinput.collections = ["PandoraPFOs", "PrimaryVertex", "PandoraClusters", "MarlinTrkTracks", "EventHeader", "MCParticlesSkimmed"]
+
+collections = ["PandoraPFOs", "PrimaryVertex", "PandoraClusters",
+                "MarlinTrkTracks", "EventHeader", "MCParticlesSkimmed",
+                "ReconstructedParticle"]
+
+podioinput.collections = collections
 
 # create a MCProducer instance
 producer = MCProducerAlg("MCProducer")
