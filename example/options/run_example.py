@@ -4,7 +4,7 @@ from Configurables import PodioInput, MCProducerAlg, MCConsumerAlg
 from Configurables import k4DataSvc
 
 evtSvc = k4DataSvc('EventDataSvc')
-evtSvc.inputs = ["/afs/cern.ch/user/c/chensel/ILD/lcio_edm4hep/edm4hep/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00001.root"]
+evtSvc.inputs = ["/afs/desy.de/user/b/bortolet/code/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00002.root"]
 
 # Input: PODIO .root file with MCParticles
 podioinput = PodioInput("InputReader")

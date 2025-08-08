@@ -1,0 +1,13 @@
+/afs/desy.de/user/b/bortolet/code/tomaz-example/install/lib/cmake/k4ProjectTemplate/headers_db.csv
+/afs/desy.de/user/b/bortolet/code/tomaz-example/install/lib/cmake/k4ProjectTemplate/k4ProjectTemplateConfig.cmake
+/afs/desy.de/user/b/bortolet/code/tomaz-example/install/lib/cmake/k4ProjectTemplate/k4ProjectTemplateConfigVersion.cmake
+/afs/desy.de/user/b/bortolet/code/tomaz-example/install/include/k4ProjectTemplate/k4ProjectTemplateVersion.h
+/afs/desy.de/user/b/bortolet/code/tomaz-example/install/lib/cmake/k4ProjectTemplate/k4ProjectTemplateTargets.cmake
+/afs/desy.de/user/b/bortolet/code/tomaz-example/install/lib/cmake/k4ProjectTemplate/k4ProjectTemplateTargets-relwithdebinfo.cmake
+/afs/desy.de/user/b/bortolet/code/tomaz-example/install/lib/libk4ProjectTemplatePlugins.so
+/afs/desy.de/user/b/bortolet/code/tomaz-example/install/lib/k4ProjectTemplate.components
+/afs/desy.de/user/b/bortolet/code/tomaz-example/install/python/example/k4ProjectTemplatePluginsConf.py
+/afs/desy.de/user/b/bortolet/code/tomaz-example/install/python/example/__init__.py
+/afs/desy.de/user/b/bortolet/code/tomaz-example/install/lib/k4ProjectTemplate.confdb
+/afs/desy.de/user/b/bortolet/code/tomaz-example/install/lib/k4ProjectTemplate.confdb2
+/afs/desy.de/user/b/bortolet/code/tomaz-example/install/lib/libk4ProjectTemplatePlugins.so
