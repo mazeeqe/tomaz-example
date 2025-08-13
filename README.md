@@ -6,8 +6,8 @@ git clone https://github.com/CarstenHensel/tomaz-example.git
 cd tomaz-example/
 source setup.sh
 mkdir build install
-cd build;
+cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=../install -DPython_EXECUTABLE=$(which python3)
 make install
 
-k4run ../example/options/run_example.py```
+k4run ../example/options/run_example.py
