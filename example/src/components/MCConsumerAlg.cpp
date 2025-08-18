@@ -20,7 +20,7 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
   const auto* recoColl = m_recoParticleCollHandle.get();
   for (const auto& reconstructedParticle : *recoColl) {
       float energy = reconstructedParticle.getEnergy();
-      int particleID = reconstructedParticle.getType();
+      int particleID = reconstructedParticle.getPDG();
       // TODO: your code here, e.g., store in tree or print
   }
 
