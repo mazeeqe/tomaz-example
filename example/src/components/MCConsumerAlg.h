@@ -22,7 +22,7 @@ private:
   mutable TFile* m_rootFile = nullptr;
   mutable TTree* m_tree = nullptr;
 
-  DataHandle<edm4hep::ReconstructedParticleCollection> m_recoParticleCollHandle{
+  mutable DataHandle<edm4hep::ReconstructedParticleCollection> m_recoParticleCollHandle{
     "RecoParticleColl",
     Gaudi::DataHandle::Reader,
     this
