@@ -3,6 +3,7 @@
 #include "Gaudi/Algorithm.h"
 #include "Gaudi/Property.h"
 #include "edm4hep/MCParticleCollection.h"
+#include "edm4hep/ReconstructedParticleCollection.h" // Added include
 #include "k4FWCore/DataHandle.h"
 
 #include "TFile.h"
@@ -18,11 +19,12 @@ public:
   StatusCode finalize() override;
 
 private:
-
   mutable TFile* m_rootFile = nullptr;
   mutable TTree* m_tree = nullptr;
 
-  // Tree variables
-  mutable int m_pdg;
-  mutable float m_px, m_py, m_pz;
+  mutable DataHandle<edm4hep::ReconstructedParticleCollection> m_recoParticleCollHandle{
+    "RecoParticleColl",
+    Gaudi::DataHandle::Reader,
+    this
+  };
 };
