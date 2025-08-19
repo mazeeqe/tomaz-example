@@ -21,7 +21,11 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
   for (const auto& reconstructedParticle : *recoColl) {
       float energy = reconstructedParticle.getEnergy();
       int particleID = reconstructedParticle.getPDG();
-      // TODO: your code here, e.g., store in tree or print
+      
+      
+      // Print out the values
+      info() << "ReconstructedParticle: Energy = " << energy
+             << " GeV, PDG ID = " << particleID << endmsg;
   }
 
   return StatusCode::SUCCESS;
