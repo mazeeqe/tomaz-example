@@ -8,6 +8,7 @@
 
 #include "TFile.h"
 #include "TTree.h"
+#include "TH1F.h"
 
 class MCConsumerAlg : public Gaudi::Algorithm {
 public:
@@ -21,7 +22,9 @@ public:
 private:
   mutable TFile* m_rootFile = nullptr;
   mutable TTree* m_tree = nullptr;
+  mutable TH1F* m_h_mumu = nullptr;
 
+  // I had to add a mutable at the beggining
   mutable DataHandle<edm4hep::ReconstructedParticleCollection> m_recoParticleCollHandle{
     "RecoParticleColl",
     Gaudi::DataHandle::Reader,
