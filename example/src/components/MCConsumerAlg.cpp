@@ -18,6 +18,11 @@ StatusCode MCConsumerAlg::initialize() {
 
 StatusCode MCConsumerAlg::execute(const EventContext&) const {
   const auto* recoColl = m_recoParticleCollHandle.get();
+
+  // Total 4-momentum
+  float totalE = 0.0;
+  float totalPx = 0.0, totalPy = 0.0, totalPz = 0.0;
+
   for (const auto& reconstructedParticle : *recoColl) {
       int particleID = reconstructedParticle.getPDG();
       if (particleID == 22) { // select gluons
