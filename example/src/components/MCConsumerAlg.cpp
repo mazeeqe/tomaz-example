@@ -22,6 +22,9 @@ StatusCode MCConsumerAlg::initialize() {
   m_rootFile = new TFile("hist.root", "RECREATE");
   m_h_mumu = new TH1F("h_mumu", "Invariant Mass of #mu#mu; M_{#mu#mu} [GeV]; Events", 
                       100, 0, 200);
+  m_h_recoil = new TH1F("h_recoil", "Recoil Mass; M_{recoil} [GeV]; Events", 
+                      100, 0, 200);
+
 
   return StatusCode::SUCCESS;
 }
@@ -35,6 +38,12 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
       float pt2;
   };
 
+  // Total muons
+  int total_muon = 0;
+
+  // Collider Energy (sqrt(s)) in GeV
+  double sqrt_s = 250.0;
+
   std::vector<ParticleData> muons;
 
   // Select muons
@@ -47,7 +56,7 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
           float py = p.y;
           float pz = p.z;
           float pt2 = px*px + py*py;
-
+          total_muon += 1;
           muons.push_back({E, px, py, pz, pt2});
 
           info() << "Muon candidate PDG=" << pdg
@@ -80,7 +89,20 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
   p4_1.SetPxPyPzE(mu1.px, mu1.py, mu1.pz, mu1.E);
   p4_2.SetPxPyPzE(mu2.px, mu2.py, mu2.pz, mu2.E);
 
+  // Invariant mass of the system
   double invMass = (p4_1 + p4_2).M();
+
+  // Total 4-momentum of the muon system
+  TLorentzVector dimuon = p4_1 + p4_2;
+
+  // Initial 4-momentum of e+e- system
+  TLorentzVector initial(0, 0, 0, sqrt_s);
+
+  // Recoil 4-momentum
+  TLorentzVector recoil = initial - dimuon;
+
+  // Recoil mass
+  double M_recoil = recoil.M();
 
   // Fill histogram
   if (m_h_mumu) m_h_mumu->Fill(invMass);
@@ -88,6 +110,8 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
 
   info() << "Invariant mass of two highest-pt muons = "
          << invMass << " GeV" << endmsg;
+
+  info() << "Recoil mass = " << M_recoil << " GeV" << std::endl;
 
   return StatusCode::SUCCESS;
 }
@@ -101,6 +125,8 @@ StatusCode MCConsumerAlg::finalize() {
     delete m_rootFile;
     m_rootFile = nullptr;
   }
+
+  info() << "Total Muons found = " << total_muon;
 
   return Gaudi::Algorithm::finalize();
 }

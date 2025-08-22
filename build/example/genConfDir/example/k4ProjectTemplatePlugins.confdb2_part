@@ -1,7 +1,7 @@
 {
     'MCConsumerAlg': {
         '__component_type__': 'Algorithm',
-        '__declaration_location__': 'MCConsumerAlg.cpp:3',
+        '__declaration_location__': 'MCConsumerAlg.cpp:8',
         '__interfaces__': ('IDataHandleHolder', 'IStateful', ),
         'properties': {
             'ExtraInputs': ('std::unordered_set<DataObjID,DataObjID_Hasher,std::equal_to<DataObjID>,std::allocator<DataObjID> >', set(), ''' [DataHandleHolderBase<PropertyHolder<CommonMessaging<implements<IAlgorithm,IDataHandleHolder,IProperty,IStateful> > > >]'''),
@@ -24,6 +24,7 @@
             'NeededResources': ('std::vector<std::string,std::allocator<std::string> >', [  ], '''named resources needed during event looping [Gaudi::Algorithm]'''),
             'Blocking': ('bool', False, '''if algorithm invokes CPU-blocking system calls (offloads computations to accelerators or quantum processors, performs disk or network I/O, is bound by resource synchronization, etc) [Gaudi::Algorithm]'''),
             'FilterCircularDependencies': ('bool', True, '''filter out circular data dependencies [Gaudi::Algorithm]'''),
+            'RecoParticleColl': ('DataHandle<edm4hep::ReconstructedParticleCollection>', DataHandle('RecoParticleColl', 'R', 'DataWrapper<edm4hep::ReconstructedParticleCollection>'), '''RecoParticle collection [unknown owner type]'''),
         },
     },
     'MCProducerAlg': {

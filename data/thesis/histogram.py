@@ -25,4 +25,4 @@ plt.ylabel("Events")
 plt.title("Invariant Mass of Two Muons")
 plt.grid(alpha=0.3)
 
-plt.save("muon_histogram")
+plt.savefig("muon_histogram")
