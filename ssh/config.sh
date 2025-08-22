@@ -15,3 +15,8 @@ SETUP_COMMANDS=(
     "cd code/tomaz-example/"
     "source setup.sh"
 )
+
+#remote to local
+# rsync -avhP bortolet@naf-ilc.desy.de:/afs/desy.de/user/b/bortolet/code/tomaz-example /home/mazeeqe/Documents/mestrado/code/
+
+# rsync -avhP /home/mazeeqe/Documents/mestrado/code/tomaz-example bortolet@naf-ilc.desy.de:/afs/desy.de/user/b/bortolet/code/
