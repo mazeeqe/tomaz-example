@@ -21,6 +21,7 @@ StatusCode MCConsumerAlg::initialize() {
   // Create ROOT file and TTree
   m_rootFile = new TFile("hist.root", "RECREATE");
   m_tree = new TTree("events", "Muon analysis");
+
   m_h_mumu = new TH1F("h_mumu", "Invariant Mass of #mu#mu; M_{#mu#mu} [GeV]; Events", 
                       100, 0, 200);
   m_h_recoil = new TH1F("h_recoil", "Recoil Mass; M_{recoil} [GeV]; Events", 
@@ -58,7 +59,7 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
           float py = p.y;
           float pz = p.z;
           float pt2 = px*px + py*py;
-          total_muon += 1;
+
           muons.push_back({E, px, py, pz, pt2});
 
           info() << "Muon candidate PDG=" << pdg
@@ -69,6 +70,10 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
                  << " pt2=" << pt2 << endmsg;
       }
   }
+
+  // Default values
+  m_invMass = 0.0;
+  m_recoilMass = 0.0;
 
   // Need at least two muons
   if (muons.size() < 2) {
@@ -91,17 +96,26 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
   p4_1.SetPxPyPzE(mu1.px, mu1.py, mu1.pz, mu1.E);
   p4_2.SetPxPyPzE(mu2.px, mu2.py, mu2.pz, mu2.E);
 
-  // Invariant mass of the system
-  double invMass = (p4_1 + p4_2).M();
+  m_invMass = (p4_1 + p4_2).M();
+
+  // Initial 4-momentum of e+e- system
+  TLorentzVector initial(0, 0, 0, m_ecm);
 
   // Total 4-momentum of the muon system
   TLorentzVector dimuon = p4_1 + p4_2;
 
-  // Initial 4-momentum of e+e- system
-  TLorentzVector initial(0, 0, 0, sqrt_s);
-
   // Recoil 4-momentum
   TLorentzVector recoil = initial - dimuon;
+  m_recoilMass = recoil.M()
+
+  // Invariant mass of the system
+  double invMass = (p4_1 + p4_2).M();
+
+  // Fill tree for this event
+  if (m_tree) m_tree->Fill();
+
+
+
 
   // Recoil mass
   double M_recoil = recoil.M();
@@ -123,6 +137,7 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
   // Write to Root file
     if (m_rootFile) {
     m_rootFile->cd();
+    if (m_tree) m_tree->Write();
     if (m_h_mumu) m_h_mumu->Write();
     if (m_h_recoil) m_h_recoil->Write();
     m_rootFile->Close();
