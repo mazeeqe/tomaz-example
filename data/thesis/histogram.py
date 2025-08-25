@@ -46,7 +46,7 @@ plt.bar(recoil_centers, recoil_values, width=np.diff(edges), align="center",
         edgecolor="black", color="green")
 
 # Vertical line for Z mass
-ax.axvline(
+plt.axvline(
     z_mass,
     color='red',            # line colour
     linestyle='--',        # dashed line (solid, dashdot, etc.)

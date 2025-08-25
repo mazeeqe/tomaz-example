@@ -18,13 +18,18 @@ StatusCode MCConsumerAlg::initialize() {
   StatusCode sc = Gaudi::Algorithm::initialize();
   if (!sc.isSuccess()) return sc;
 
-  // Create ROOT file and histogram
+  // Create ROOT file and TTree
   m_rootFile = new TFile("hist.root", "RECREATE");
+  m_tree = new TTree("events", "Muon analysis");
   m_h_mumu = new TH1F("h_mumu", "Invariant Mass of #mu#mu; M_{#mu#mu} [GeV]; Events", 
                       100, 0, 200);
   m_h_recoil = new TH1F("h_recoil", "Recoil Mass; M_{recoil} [GeV]; Events", 
                       100, 0, 200);
 
+
+  // Define branches
+  m_tree->Branch("invMass",   &m_invMass,   "invMass/F");
+  m_tree->Branch("recoilMass",&m_recoilMass,"recoilMass/F");
 
   return StatusCode::SUCCESS;
 }
@@ -37,9 +42,6 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
       float px, py, pz;
       float pt2;
   };
-
-  // Total muons
-  int total_muon = 0;
 
   // Collider Energy (sqrt(s)) in GeV
   double sqrt_s = 250.0;
@@ -92,41 +94,42 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
   // Invariant mass of the system
   double invMass = (p4_1 + p4_2).M();
 
-  // Total 4-momentum of the muon system
+  // Total 4-momentum of the muon system
   TLorentzVector dimuon = p4_1 + p4_2;
 
-  // Initial 4-momentum of e+e- system
+  // Initial 4-momentum of e+e- system
   TLorentzVector initial(0, 0, 0, sqrt_s);
 
-  // Recoil 4-momentum
+  // Recoil 4-momentum
   TLorentzVector recoil = initial - dimuon;
 
-  // Recoil mass
+  // Recoil mass
   double M_recoil = recoil.M();
 
   // Fill histogram
   if (m_h_mumu) m_h_mumu->Fill(invMass);
+  if (m_h_recoil) m_h_recoil->Fill(M_recoil);
 
 
   info() << "Invariant mass of two highest-pt muons = "
-         << invMass << " GeV" << endmsg;
+          << invMass << " GeV" << endmsg;
 
   info() << "Recoil mass = " << M_recoil << " GeV" << std::endl;
 
   return StatusCode::SUCCESS;
-}
+  }
 
-StatusCode MCConsumerAlg::finalize() {
+  StatusCode MCConsumerAlg::finalize() {
   // Write to Root file
     if (m_rootFile) {
     m_rootFile->cd();
     if (m_h_mumu) m_h_mumu->Write();
+    if (m_h_recoil) m_h_recoil->Write();
     m_rootFile->Close();
     delete m_rootFile;
     m_rootFile = nullptr;
   }
 
-  info() << "Total Muons found = " << total_muon;
 
   return Gaudi::Algorithm::finalize();
 }
