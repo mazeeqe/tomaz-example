@@ -3,6 +3,7 @@ from Gaudi.Configuration import ApplicationMgr
 from Configurables import PodioInput, MCProducerAlg, MCConsumerAlg
 from Configurables import k4DataSvc
 
+
 evtSvc = k4DataSvc('EventDataSvc')
 evtSvc.inputs = ["/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00002.root"]
 
@@ -27,7 +28,7 @@ ApplicationMgr(
     # provide list and order of algorithms
     TopAlg=[podioinput, producer, consumer],
     EvtSel="NONE",
-    EvtMax=5,
+    EvtMax=1000,
     ExtSvc=[evtSvc],
     OutputLevel=INFO
 )

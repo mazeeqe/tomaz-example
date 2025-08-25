@@ -1,3 +1,9 @@
+Code repository for my Master's Thesis at Brazilian Center for Physics Research,
+
+Tomáz Antonio Bortoletto Giansante,
+
+Supervisor: Carsten Hensel
+
 Installation
 
 ```bash

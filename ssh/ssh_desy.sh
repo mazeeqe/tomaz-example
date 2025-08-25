@@ -88,6 +88,21 @@ ask_and_ssh() {
     fi
 }
 
+sync_from_remote() {
+    log "Do you want to sync remote files back to your local machine?"
+    echo "    Remote: $REMOTE:$REMOTE_OUTPUT_DIR"
+    echo "    Local:  $LOCAL_OUTPUT_DIR"
+    read -rp "Sync from remote? (y/n): " answer
+
+    if [[ "$answer" =~ ^[Yy]$ ]]; then
+        log "Syncing from remote..."
+        rsync -avhP "$REMOTE:$REMOTE_OUTPUT_DIR" "$LOCAL_OUTPUT_DIR"
+    else
+        log "Skipping remote-to-local sync."
+    fi
+}
+
+
 
 # ---------- Main ----------
 USER="${1:-$DEFAULT_USER}"
@@ -97,3 +112,4 @@ REMOTE="$USER@$HOST"
 launch_keepass
 sync_files
 ask_and_ssh
+sync_from_remote

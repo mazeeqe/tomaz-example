@@ -1,4 +1,4 @@
-#Wed Aug  6 23:41:11 2025"""Automatically generated. DO NOT EDIT please"""
+#Wed Aug 20 18:36:17 2025"""Automatically generated. DO NOT EDIT please"""
 import sys
 if sys.version_info >= (3,):
     # Python 2 compatibility
@@ -28,6 +28,7 @@ class MCConsumerAlg( ConfigurableAlgorithm ) :
     'NeededResources' : [  ],
     'Blocking' : False,
     'FilterCircularDependencies' : True,
+    'RecoParticleColl' : DataHandle('RecoParticleColl', 'R', 'DataWrapper<edm4hep::ReconstructedParticleCollection>'),
   }
   _propertyDocDct = { 
     'ExtraInputs' : """  [DataHandleHolderBase<PropertyHolder<CommonMessaging<implements<IAlgorithm,IDataHandleHolder,IProperty,IStateful> > > >] """,
@@ -50,8 +51,9 @@ class MCConsumerAlg( ConfigurableAlgorithm ) :
     'NeededResources' : """ named resources needed during event looping [Gaudi::Algorithm] """,
     'Blocking' : """ if algorithm invokes CPU-blocking system calls (offloads computations to accelerators or quantum processors, performs disk or network I/O, is bound by resource synchronization, etc) [Gaudi::Algorithm] """,
     'FilterCircularDependencies' : """ filter out circular data dependencies [Gaudi::Algorithm] """,
+    'RecoParticleColl' : """ RecoParticle collection [unknown owner type] """,
   }
-  __declaration_location__ = 'MCConsumerAlg.cpp:3'
+  __declaration_location__ = 'MCConsumerAlg.cpp:8'
   def __init__(self, name = Configurable.DefaultName, **kwargs):
       super(MCConsumerAlg, self).__init__(name)
       for n,v in kwargs.items():
