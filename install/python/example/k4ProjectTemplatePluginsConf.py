@@ -1,4 +1,4 @@
-#Fri Aug 22 05:00:39 2025"""Automatically generated. DO NOT EDIT please"""
+#Mon Aug 25 22:42:14 2025"""Automatically generated. DO NOT EDIT please"""
 import sys
 if sys.version_info >= (3,):
     # Python 2 compatibility
@@ -28,6 +28,7 @@ class MCConsumerAlg( ConfigurableAlgorithm ) :
     'NeededResources' : [  ],
     'Blocking' : False,
     'FilterCircularDependencies' : True,
+    'CollisionEnergy' : 250.00000,
     'RecoParticleColl' : DataHandle('RecoParticleColl', 'R', 'DataWrapper<edm4hep::ReconstructedParticleCollection>'),
   }
   _propertyDocDct = { 
@@ -51,6 +52,7 @@ class MCConsumerAlg( ConfigurableAlgorithm ) :
     'NeededResources' : """ named resources needed during event looping [Gaudi::Algorithm] """,
     'Blocking' : """ if algorithm invokes CPU-blocking system calls (offloads computations to accelerators or quantum processors, performs disk or network I/O, is bound by resource synchronization, etc) [Gaudi::Algorithm] """,
     'FilterCircularDependencies' : """ filter out circular data dependencies [Gaudi::Algorithm] """,
+    'CollisionEnergy' : """ Center-of-mass energy [GeV] [MCConsumerAlg] """,
     'RecoParticleColl' : """ RecoParticle collection [unknown owner type] """,
   }
   __declaration_location__ = 'MCConsumerAlg.cpp:8'

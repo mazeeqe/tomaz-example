@@ -22,13 +22,17 @@ public:
 private:
   mutable TFile* m_rootFile = nullptr;
   mutable TTree* m_tree = nullptr;
-  mutable TH1F* m_h_mumu = nullptr; // Invariant mass histogram
-  mutable TH1F* m_h_recoil = nullptr; // Recoil mass histogram
 
   // Variables to store in the tree
   mutable float m_invMass   = 0.0;
   mutable float m_recoilMass = 0.0;
+  mutable float m_totalEnergy  = 0.0;
+  mutable float m_px           = 0.0;
+  mutable float m_py           = 0.0;
+  mutable float m_pz           = 0.0;
+  mutable float m_met          = 0.0; // missing transverse energy
 
+  // Constant for the Recoil Mass
   Gaudi::Property<double> m_ecm{
     this, "CollisionEnergy", 250.0, "Center-of-mass energy [GeV]"
   };

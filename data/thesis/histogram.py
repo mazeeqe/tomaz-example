@@ -9,9 +9,7 @@ h_mass = 125.20
 # Open the ROOT file
 file = uproot.open("hist.root")
 tree = file["events"]
-
-
-# Convert branches to numpy arrays
+# Load branches into numpy arrays
 invMass = tree["invMass"].array(library="np")
 recoilMass = tree["recoilMass"].array(library="np")
 
@@ -20,11 +18,9 @@ recoilMass = tree["recoilMass"].array(library="np")
 plt.figure(figsize=(8,6))
 
 #Invariant mass
-plt.hist(invMass, bins=100, range=(0,200), histtype='step', color='blue')
-
+plt.hist(invMass, bins=100, range=(0,200), histtype="step", color="blue", label="Invariant Mass")
 #Recoil mass
-plt.hist(recoilMass, bins=100, range=(0,200), histtype='step', color='green')
-
+plt.hist(recoilMass, bins=100, range=(0,200), histtype="step", color="red", label="Recoil Mass")
 # Vertical line for Z mass
 plt.axvline(
     z_mass,
