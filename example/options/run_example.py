@@ -5,7 +5,7 @@ from Configurables import k4DataSvc
 
 
 evtSvc = k4DataSvc('EventDataSvc')
-evtSvc.inputs = ["/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00002.root"]
+evtSvc.inputs = ["/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00002.root"]*5
 
 # Input: PODIO .root file with MCParticles
 podioinput = PodioInput("InputReader")
