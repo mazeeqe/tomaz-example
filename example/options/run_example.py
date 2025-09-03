@@ -61,11 +61,12 @@ def root_file_paths(
 
 
 # The ROOT files sit in “…/tomaz-example/input_files”
-parent_dir = "../../input_files"
+parent_dir = "../input_files"
 
 # Get the 12 file paths
-file_list = root_file_paths(parent_dir, start=1, stop=2)
+file_list = root_file_paths(parent_dir, start=2, stop=12)
 
+#For some reason running 1 and 2 crashes but 1 by itself worked
 # ----------------------------------------------------------------------
 # key4hep code
 # ----------------------------------------------------------------------
