@@ -28,16 +28,33 @@ StatusCode MCConsumerAlg::initialize() {
   m_tree->Branch("invMass",   &m_invMass,   "invMass/F");
   m_tree->Branch("recoilMass",&m_recoilMass,"recoilMass/F");
   m_tree->Branch("totalEnergy",  &m_totalEnergy,  "totalEnergy/F");
+  m_tree->Branch("m_muonEnergy_high",  &m_muonEnergy_high,  "m_muonEnergy_high/F");
+  m_tree->Branch("m_muonEnergy_low",  &m_muonEnergy_low,  "m_muonEnergy_low/F");
   m_tree->Branch("px",           &m_px,           "px/F");
   m_tree->Branch("py",           &m_py,           "py/F");
   m_tree->Branch("pz",           &m_pz,           "pz/F");
   m_tree->Branch("met",          &m_met,          "met/F");
+
+  // New branches for missing energy
+  m_tree->Branch("missingEnergy", &m_missingEnergy, "missingEnergy/F");
+  m_tree->Branch("missingPx",     &m_missingPx,     "missingPx/F");
+  m_tree->Branch("missingPy",     &m_missingPy,     "missingPy/F");
+  m_tree->Branch("missingPz",     &m_missingPz,     "missingPz/F");
 
   return StatusCode::SUCCESS;
 }
 
 StatusCode MCConsumerAlg::execute(const EventContext&) const {
   const auto* recoColl = m_recoParticleCollHandle.get();
+
+  // Reset values each event
+  m_invMass = m_recoilMass = m_totalEnergy = 0.0;
+  m_px = m_py = m_pz = m_met = 0.0;
+  m_missingEnergy = m_missingPx = m_missingPy = m_missingPz = 0.0;
+
+  // --- Loop over ALL particles to compute total event sums ---
+  float sumE  = 0.0;
+  float sumPx = 0.0, sumPy = 0.0, sumPz = 0.0;
 
   struct ParticleData {
       float E;
@@ -50,6 +67,15 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
 
   // Select muons
   for (const auto& reconstructedParticle : *recoColl) {
+
+      // Enegy and Momentum for each particle
+      sumE  += part.getEnergy();
+      auto p = part.getMomentum();
+      sumPx += p.x;
+      sumPy += p.y;
+      sumPz += p.z;
+
+      // For the Muons
       int pdg = reconstructedParticle.getPDG();
       if (std::abs(pdg) == 13) {
           auto p = reconstructedParticle.getMomentum();
@@ -70,11 +96,17 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
       }
   }
 
-  // Default values
-  m_invMass = 0.0;
-  m_recoilMass = 0.0;
-  m_totalEnergy = 0.0;
-  m_px = m_py = m_pz = m_met = 0.0;
+  // Initial 4-momentum at e+e- collider
+  float initE  = m_ecm;
+  float initPx = 0.0;
+  float initPy = 0.0;
+  float initPz = 0.0;
+
+  // Missing energy and momentum
+  m_missingEnergy = initE  - sumE;
+  m_missingPx     = initPx - sumPx;
+  m_missingPy     = initPy - sumPy;
+  m_missingPz     = initPz - sumPz;
 
   // Need at least two muons
   if (muons.size() < 2) {
@@ -96,6 +128,10 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
   TLorentzVector p4_1, p4_2;
   p4_1.SetPxPyPzE(mu1.px, mu1.py, mu1.pz, mu1.E);
   p4_2.SetPxPyPzE(mu2.px, mu2.py, mu2.pz, mu2.E);
+
+  // Set energy for the both muons
+  m_muonEnergy_high = p4_1.E()
+  m_muonEnergy_low = p4_2.E()
 
   // Total 4-momentum of the muon system
   TLorentzVector dimuon = p4_1 + p4_2;
@@ -121,10 +157,10 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
 
 
 
-  info() << "Invariant mass of two highest-pt muons = "
+  //info() << "Invariant mass of two highest-pt muons = "
           << m_invMass << " GeV" << endmsg;
 
-  info() << "Recoil mass = " << m_recoilMass << " GeV" << std::endl;
+  //info() << "Recoil mass = " << m_recoilMass << " GeV" << std::endl;
 
   return StatusCode::SUCCESS;
   }
