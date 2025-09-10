@@ -6,65 +6,90 @@ from Configurables import k4DataSvc
 # ----------------------------------------------------------------------
 # Input importing
 # ----------------------------------------------------------------------
+import re
 from pathlib import Path
-from typing import List
+from typing import List, Iterable
+
 
 def root_file_paths(
     parent_folder: str | Path,
-    start: int = 1,
-    stop: int = 12,
+    *,
     prefix: str = "Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-",
     suffix: str = ".root",
-    pad: int = 5,
-    absolute: bool = True
+    absolute: bool = True,
+    include: Iterable[int] | None = None,
 ) -> List[str]:
     """
-    Construct full file paths for files named like
-    Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00X.root
-    that reside in ``parent_folder``.
+    Build a list of ROOT‑file paths for files whose names look like
+
+        {prefix}{number}{suffix}
+
+    where *number* can be any integer (e.g. 70, 146, 00123).  The function
+    discovers the files that actually exist, extracts the numeric part,
+    sorts them numerically, and returns the full paths.
 
     Parameters
     ----------
-    parent_folder : str or Path
-        The directory that contains the ROOT files.
-    start, stop : int
-        Index range (inclusive).  Use start=1 for “01”.
+    parent_folder : str | Path
+        Directory containing the ROOT files.
     prefix, suffix : str
-        Fixed parts of the filename.
-    pad : int
-        Number of digits for zero‑padding (2 → 01,02,…).
+        Fixed text surrounding the numeric identifier.
     absolute : bool, default True
-        If True, return absolute paths; otherwise return paths
+        Return absolute paths when ``True``; otherwise return paths
         relative to ``parent_folder``.
+    include : iterable of int | None, optional
+        If supplied, only files whose numeric identifier is in this
+        collection are kept.  Useful when you want a subset of the
+        discovered files.
 
     Returns
     -------
     List[str]
-        A list of file paths ready to be opened.
+        Sorted list of file paths (as strings) ready for opening.
     """
+
     parent = Path(parent_folder)
 
-    paths: List[str] = []
-    for i in range(start, stop + 1):
-        idx = f"{i:0{pad}d}"                 # e.g. 1 → "01"
-        filename = f"{prefix}{idx}{suffix}" # full filename
-        file_path = parent / filename
+    # Build a regex that captures the number between prefix and suffix.
+    # Example pattern: ^Dirac-Dst-E250-e2e2h_inv\.eL\.pR_bg-(\d+)\\.root$
+    escaped_prefix = re.escape(prefix)
+    escaped_suffix = re.escape(suffix)
+    pattern = re.compile(rf"^{escaped_prefix}(\d+){escaped_suffix}$")
 
-        # Optionally resolve to an absolute path
-        if absolute:
-            file_path = file_path.resolve()
+    matched: List[tuple[int, Path]] = []
 
-        paths.append(str(file_path))
+    for entry in parent.iterdir():
+        if not entry.is_file():
+            continue
+        m = pattern.match(entry.name)
+        if m:
+            num = int(m.group(1))          # numeric part as int
+            if include is None or num in include:
+                matched.append((num, entry))
 
-    return paths
+    # Sort by the extracted integer (numeric order, not lexical)
+    matched.sort(key=lambda pair: pair[0])
 
+    # Resolve to absolute paths if requested
+    result = [
+        str(p.resolve() if absolute else p)
+        for _, p in matched
+    ]
+
+    return result
 
 
 # The ROOT files sit in “…/tomaz-example/input_files”
 parent_dir = "../input_files"
 
 # Get the 12 file paths
-file_list = root_file_paths(parent_dir, start=2, stop=12)
+source_list = root_file_paths(parent_dir,
+                    include=range(1,13)
+ )
+
+background_list = root_file_paths(parent_dir,
+                prefix="rv02-02-01.sv02-02.mILD_l5_o2_v02.E250-SetA.I500078.P4f_zznu_sl.eL.pR.n000_001.d_dst_00015656_"
+)
 
 #For some reason running 1 and 2 crashes but 1 by itself worked
 # ----------------------------------------------------------------------
@@ -72,7 +97,7 @@ file_list = root_file_paths(parent_dir, start=2, stop=12)
 # ----------------------------------------------------------------------
 
 evtSvc = k4DataSvc('EventDataSvc')
-evtSvc.inputs = file_list
+evtSvc.inputs = source_list + background_list
 
 # Input: PODIO .root file with MCParticles
 podioinput = PodioInput("InputReader")
