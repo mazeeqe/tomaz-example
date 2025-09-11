@@ -84,20 +84,23 @@ parent_dir = "../input_files"
 
 # Get the 12 file paths
 source_list = root_file_paths(parent_dir,
-                    include=range(1,13)
+                    include=range(2,13)
  )
 
-background_list = root_file_paths(parent_dir,
-                prefix="rv02-02-01.sv02-02.mILD_l5_o2_v02.E250-SetA.I500078.P4f_zznu_sl.eL.pR.n000_001.d_dst_00015656_"
-)
+#background_list = root_file_paths(parent_dir,
+                #prefix="rv02-02-01.sv02-02.mILD_l5_o2_v02.E250-SetA.I500078.P4f_zznu_sl.eL.pR.n000_001.d_dst_00015656_"
+                #)
 
+background = "/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/" + "rv02-02-01.sv02-02.mILD_l5_o2_v02.E250-SetA.I500078.P4f_zznu_sl.eL.pR.n000_005.d_dst_00015656_91.root"
+#146, 70, 201, 167 broken
+background_list =  [background]
 #For some reason running 1 and 2 crashes but 1 by itself worked
 # ----------------------------------------------------------------------
 # key4hep code
 # ----------------------------------------------------------------------
 
 evtSvc = k4DataSvc('EventDataSvc')
-evtSvc.inputs = source_list + background_list
+evtSvc.inputs = source_list #+ background_list
 
 # Input: PODIO .root file with MCParticles
 podioinput = PodioInput("InputReader")
