@@ -84,7 +84,7 @@ parent_dir = "../input_files"
 
 # Get the 12 file paths
 source_list = root_file_paths(parent_dir,
-                    include=range(1,13)
+                    include=range(2,13)
  )
 
 def build_file_paths_regex(
@@ -175,13 +175,12 @@ background_list = build_file_paths_regex(parent_dir, my_regex)
 # ----------------------------------------------------------------------
 
 evtSvc = k4DataSvc('EventDataSvc')
-evtSvc.inputs = source_list + background_list
+evtSvc.inputs = source_list #+ background_list
 
 # Input: PODIO .root file with MCParticles
 podioinput = PodioInput("InputReader")
 
-collections = ["PandoraPFOs", "PrimaryVertex", "PandoraClusters",
-                "MarlinTrkTracks", "EventHeader", "MCParticlesSkimmed"]
+collections = ["PandoraPFOs", "EventHeader", "MCParticlesSkimmed"]
 
 podioinput.collections = collections
 

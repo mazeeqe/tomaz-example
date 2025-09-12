@@ -28,8 +28,8 @@ StatusCode MCConsumerAlg::initialize() {
   m_tree->Branch("invMass",   &m_invMass,   "invMass/F");
   m_tree->Branch("recoilMass",&m_recoilMass,"recoilMass/F");
   m_tree->Branch("totalEnergy",  &m_totalEnergy,  "totalEnergy/F");
-  m_tree->Branch("m_muonEnergy_high",  &m_muonEnergy_high,  "m_muonEnergy_high/F");
-  m_tree->Branch("m_muonEnergy_low",  &m_muonEnergy_low,  "m_muonEnergy_low/F");
+  m_tree->Branch("muonEnergy_high",  &m_muonEnergy_high,  "muonEnergy_high/F");
+  m_tree->Branch("muonEnergy_low",  &m_muonEnergy_low,  "muonEnergy_low/F");
   m_tree->Branch("px",           &m_px,           "px/F");
   m_tree->Branch("py",           &m_py,           "py/F");
   m_tree->Branch("pz",           &m_pz,           "pz/F");
@@ -69,8 +69,8 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
   for (const auto& reconstructedParticle : *recoColl) {
 
       // Enegy and Momentum for each particle
-      sumE  += part.getEnergy();
-      auto p = part.getMomentum();
+      sumE  += reconstructedParticle.getEnergy();
+      auto p = reconstructedParticle.getMomentum();
       sumPx += p.x;
       sumPy += p.y;
       sumPz += p.z;
@@ -78,11 +78,11 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
       // For the Muons
       int pdg = reconstructedParticle.getPDG();
       if (std::abs(pdg) == 13) {
-          auto p = reconstructedParticle.getMomentum();
+          auto muon = reconstructedParticle.getMomentum();
           float E  = reconstructedParticle.getEnergy();
-          float px = p.x;
-          float py = p.y;
-          float pz = p.z;
+          float px = muon.x;
+          float py = muon.y;
+          float pz = muon.z;
           float pt2 = px*px + py*py;
 
           muons.push_back({E, px, py, pz, pt2});
@@ -130,8 +130,8 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
   p4_2.SetPxPyPzE(mu2.px, mu2.py, mu2.pz, mu2.E);
 
   // Set energy for the both muons
-  m_muonEnergy_high = p4_1.E()
-  m_muonEnergy_low = p4_2.E()
+  m_muonEnergy_high = p4_1.E();
+  m_muonEnergy_low = p4_2.E();
 
   // Total 4-momentum of the muon system
   TLorentzVector dimuon = p4_1 + p4_2;
@@ -158,7 +158,7 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
 
 
   //info() << "Invariant mass of two highest-pt muons = "
-          << m_invMass << " GeV" << endmsg;
+  //       << m_invMass << " GeV" << endmsg;
 
   //info() << "Recoil mass = " << m_recoilMass << " GeV" << std::endl;
 
