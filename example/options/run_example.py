@@ -175,7 +175,7 @@ background_list = build_file_paths_regex(parent_dir, my_regex)
 # ----------------------------------------------------------------------
 
 evtSvc = k4DataSvc('EventDataSvc')
-evtSvc.inputs = source_list #+ background_list
+evtSvc.inputs = background_list
 
 # Input: PODIO .root file with MCParticles
 podioinput = PodioInput("InputReader")
