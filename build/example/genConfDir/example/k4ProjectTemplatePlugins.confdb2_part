@@ -24,6 +24,7 @@
             'NeededResources': ('std::vector<std::string,std::allocator<std::string> >', [  ], '''named resources needed during event looping [Gaudi::Algorithm]'''),
             'Blocking': ('bool', False, '''if algorithm invokes CPU-blocking system calls (offloads computations to accelerators or quantum processors, performs disk or network I/O, is bound by resource synchronization, etc) [Gaudi::Algorithm]'''),
             'FilterCircularDependencies': ('bool', True, '''filter out circular data dependencies [Gaudi::Algorithm]'''),
+            'CollisionEnergy': ('double', 250.00000, '''Center-of-mass energy [GeV] [MCConsumerAlg]'''),
             'RecoParticleColl': ('DataHandle<edm4hep::ReconstructedParticleCollection>', DataHandle('RecoParticleColl', 'R', 'DataWrapper<edm4hep::ReconstructedParticleCollection>'), '''RecoParticle collection [unknown owner type]'''),
         },
     },
