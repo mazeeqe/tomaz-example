@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <vector>
 #include "TLorentzVector.h"
+#include "TParameter.h"
 
 DECLARE_COMPONENT(MCConsumerAlg)
 

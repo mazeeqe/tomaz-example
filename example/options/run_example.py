@@ -197,7 +197,7 @@ ApplicationMgr(
     # provide list and order of algorithms
     TopAlg=[podioinput, producer, consumer],
     EvtSel="NONE",
-    EvtMax=1000,
+    EvtMax=10000,
     ExtSvc=[evtSvc],
     OutputLevel=INFO
 )

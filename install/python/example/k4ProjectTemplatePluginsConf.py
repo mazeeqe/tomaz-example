@@ -1,4 +1,4 @@
-#Fri Sep 12 02:03:25 2025"""Automatically generated. DO NOT EDIT please"""
+#Tue Sep 23 00:54:56 2025"""Automatically generated. DO NOT EDIT please"""
 import sys
 if sys.version_info >= (3,):
     # Python 2 compatibility
@@ -28,6 +28,9 @@ class MCConsumerAlg( ConfigurableAlgorithm ) :
     'NeededResources' : [  ],
     'Blocking' : False,
     'FilterCircularDependencies' : True,
+    'NumEventsGenerated' : 0,
+    'CrossSection' : 1.0000000,
+    'TargetLuminosity' : 1.0000000,
     'CollisionEnergy' : 250.00000,
     'RecoParticleColl' : DataHandle('RecoParticleColl', 'R', 'DataWrapper<edm4hep::ReconstructedParticleCollection>'),
   }
@@ -52,10 +55,13 @@ class MCConsumerAlg( ConfigurableAlgorithm ) :
     'NeededResources' : """ named resources needed during event looping [Gaudi::Algorithm] """,
     'Blocking' : """ if algorithm invokes CPU-blocking system calls (offloads computations to accelerators or quantum processors, performs disk or network I/O, is bound by resource synchronization, etc) [Gaudi::Algorithm] """,
     'FilterCircularDependencies' : """ filter out circular data dependencies [Gaudi::Algorithm] """,
+    'NumEventsGenerated' : """ Number of generated events [MCConsumerAlg] """,
+    'CrossSection' : """ Process cross-section [pb] [MCConsumerAlg] """,
+    'TargetLuminosity' : """ Target luminosity [fb^-1] [MCConsumerAlg] """,
     'CollisionEnergy' : """ Center-of-mass energy [GeV] [MCConsumerAlg] """,
     'RecoParticleColl' : """ RecoParticle collection [unknown owner type] """,
   }
-  __declaration_location__ = 'MCConsumerAlg.cpp:8'
+  __declaration_location__ = 'MCConsumerAlg.cpp:9'
   def __init__(self, name = Configurable.DefaultName, **kwargs):
       super(MCConsumerAlg, self).__init__(name)
       for n,v in kwargs.items():
