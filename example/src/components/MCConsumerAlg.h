@@ -42,6 +42,8 @@ private:
   mutable float m_missingPy = 0.0;
   mutable float m_missingPz = 0.0;
 
+  // Monte Carlo weights
+  mutable float m_weight = 1.0;
 
   // Run-level metadata (set from Python)
   Gaudi::Property<int> m_numEventsGenerated{

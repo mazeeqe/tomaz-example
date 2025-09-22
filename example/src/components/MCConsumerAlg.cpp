@@ -22,6 +22,13 @@ StatusCode MCConsumerAlg::initialize() {
   m_rootFile = new TFile("hist.root", "RECREATE");
   m_tree = new TTree("events", "Muon analysis");
 
+  // Compute event weight once
+  if (m_numEventsGenerated > 0) {
+    m_weight = (m_crossSection * m_targetLuminosity) / m_numEventsGenerated;
+  } else {
+    m_weight = 1.0; // default safeguard
+  }
+
   // Define branches
 
   // Mass Branches
