@@ -43,6 +43,17 @@ private:
   mutable float m_missingPz = 0.0;
 
 
+  // Run-level metadata (set from Python)
+  Gaudi::Property<int> m_numEventsGenerated{
+    this, "NumEventsGenerated", 0, "Number of generated events"
+  };
+  Gaudi::Property<double> m_crossSection{
+    this, "CrossSection", 1.0, "Process cross-section [pb]"
+  };
+  Gaudi::Property<double> m_targetLuminosity{
+    this, "TargetLuminosity", 1.0, "Target luminosity [fb^-1]"
+  };
+
   // Constant for the Recoil Mass
   Gaudi::Property<double> m_ecm{
     this, "CollisionEnergy", 250.0, "Center-of-mass energy [GeV]"
