@@ -48,6 +48,9 @@ StatusCode MCConsumerAlg::initialize() {
   m_tree->Branch("missingPy",     &m_missingPy,     "missingPy/F");
   m_tree->Branch("missingPz",     &m_missingPz,     "missingPz/F");
 
+  // New branch: Monte Carlo weight
+  m_tree->Branch("weight", &m_weight, "weight/F");
+
   return StatusCode::SUCCESS;
 }
 
