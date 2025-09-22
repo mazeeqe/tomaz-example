@@ -1,4 +1,4 @@
-#Tue Sep 23 00:54:56 2025"""Automatically generated. DO NOT EDIT please"""
+#Tue Sep 23 01:37:29 2025"""Automatically generated. DO NOT EDIT please"""
 import sys
 if sys.version_info >= (3,):
     # Python 2 compatibility
@@ -28,7 +28,7 @@ class MCConsumerAlg( ConfigurableAlgorithm ) :
     'NeededResources' : [  ],
     'Blocking' : False,
     'FilterCircularDependencies' : True,
-    'NumEventsGenerated' : 0,
+    'NumEventsGenerated' : 10000,
     'CrossSection' : 1.0000000,
     'TargetLuminosity' : 1.0000000,
     'CollisionEnergy' : 250.00000,

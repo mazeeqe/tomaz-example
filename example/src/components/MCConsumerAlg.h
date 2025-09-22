@@ -47,7 +47,7 @@ private:
 
   // Run-level metadata (set from Python)
   Gaudi::Property<int> m_numEventsGenerated{
-    this, "NumEventsGenerated", 0, "Number of generated events"
+    this, "NumEventsGenerated", 10000, "Number of generated events"
   };
   Gaudi::Property<double> m_crossSection{
     this, "CrossSection", 1.0, "Process cross-section [pb]"

@@ -45,6 +45,7 @@ example/CMakeFiles/k4ProjectTemplatePlugins.dir/src/components/MCConsumerAlg.cpp
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/bits/fs_fwd.h
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/bits/fs_ops.h
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/bits/fs_path.h
+ /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/bits/fstream.tcc
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/bits/functexcept.h
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/bits/functional_hash.h
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/bits/gslice.h
@@ -197,6 +198,7 @@ example/CMakeFiles/k4ProjectTemplatePlugins.dir/src/components/MCConsumerAlg.cpp
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/filesystem
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/format
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/forward_list
+ /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/fstream
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/functional
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/initializer_list
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/iomanip
@@ -260,8 +262,10 @@ example/CMakeFiles/k4ProjectTemplatePlugins.dir/src/components/MCConsumerAlg.cpp
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/vector
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/version
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/x86_64-pc-linux-gnu/bits/atomic_word.h
+ /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/x86_64-pc-linux-gnu/bits/basic_file.h
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/x86_64-pc-linux-gnu/bits/c++allocator.h
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/x86_64-pc-linux-gnu/bits/c++config.h
+ /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/x86_64-pc-linux-gnu/bits/c++io.h
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/x86_64-pc-linux-gnu/bits/c++locale.h
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/x86_64-pc-linux-gnu/bits/cpu_defines.h
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/include/c++/14.2.0/x86_64-pc-linux-gnu/bits/ctype_base.h
@@ -936,6 +940,7 @@ example/CMakeFiles/k4ProjectTemplatePlugins.dir/src/components/MCConsumerAlg.cpp
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/TypeTraits.hxx
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/span.hxx
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/RVersion.h
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/Riostream.h
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/Rtypes.h
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/RtypesCore.h
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TArray.h
@@ -987,6 +992,8 @@ example/CMakeFiles/k4ProjectTemplatePlugins.dir/src/components/MCConsumerAlg.cpp
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TNamed.h
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TObjArray.h
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TObject.h
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TParameter.h
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TROOT.h
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TRotation.h
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TSchemaHelper.h
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TSeqCollection.h

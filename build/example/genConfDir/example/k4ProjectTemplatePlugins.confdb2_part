@@ -24,7 +24,7 @@
             'NeededResources': ('std::vector<std::string,std::allocator<std::string> >', [  ], '''named resources needed during event looping [Gaudi::Algorithm]'''),
             'Blocking': ('bool', False, '''if algorithm invokes CPU-blocking system calls (offloads computations to accelerators or quantum processors, performs disk or network I/O, is bound by resource synchronization, etc) [Gaudi::Algorithm]'''),
             'FilterCircularDependencies': ('bool', True, '''filter out circular data dependencies [Gaudi::Algorithm]'''),
-            'NumEventsGenerated': ('int', 0, '''Number of generated events [MCConsumerAlg]'''),
+            'NumEventsGenerated': ('int', 10000, '''Number of generated events [MCConsumerAlg]'''),
             'CrossSection': ('double', 1.0000000, '''Process cross-section [pb] [MCConsumerAlg]'''),
             'TargetLuminosity': ('double', 1.0000000, '''Target luminosity [fb^-1] [MCConsumerAlg]'''),
             'CollisionEnergy': ('double', 250.00000, '''Center-of-mass energy [GeV] [MCConsumerAlg]'''),
