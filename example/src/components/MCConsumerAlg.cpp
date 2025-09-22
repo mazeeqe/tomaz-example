@@ -170,6 +170,12 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
     if (m_rootFile) {
     m_rootFile->cd();
     if (m_tree) m_tree->Write();
+
+    // Store run-level metadata as TParameters
+    TParameter<int>("NumEventsGenerated", m_numEventsGenerated).Write();
+    TParameter<double>("CrossSection_pb", m_crossSection).Write();
+    TParameter<double>("TargetLuminosity_fb", m_targetLuminosity).Write();
+
     m_rootFile->Close();
     delete m_rootFile;
     m_rootFile = nullptr;
