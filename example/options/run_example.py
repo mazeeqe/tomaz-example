@@ -7,6 +7,9 @@ from Configurables import k4DataSvc
 # Custom arguments
 # ----------------------------------------------------------------------
 from k4FWCore.parseArgs import parser
+
+# Arguments for the background files
+parser.add_argument("--signal", action="store_true", help="Run only track reconstruction", default=False)
 parser.add_argument("--background", action="store_true", help="Run only track reconstruction", default=False)
 my_opts = parser.parse_known_args()[0]
 
