@@ -2,8 +2,8 @@
 set -euo pipefail   # safety: exit on error, treat unset vars as errors
 
 # File Options
-SIGNAL="--signal"
-BACKGROUND="--background"
+SIGNAL="signal"
+BACKGROUND="background"
 
 
 # ---- 2. Define source & destination -----------------------------------------
@@ -12,7 +12,7 @@ SRC="./hist.root"
 
 # Desired new name and target directory (change as you wish)
 NEW_NAME="hist.root"
-DEST_DIR="./output_files"
+DEST_DIR="../output_files"
 
 # Build the full destination path
 DEST="${DEST_DIR}/${NEW_NAME}"
@@ -31,7 +31,7 @@ run_python() {
 
     # Execute the command – quoting the interpreter and script protects
     # against spaces in their paths.
-    "$COMMAND" "$SCRIPT_PATH" $OPTIONS
+    "$COMMAND" "$SCRIPT_PATH" "--$OPTIONS"
 
     # Capture the exit status if you need it downstream
     local EXIT_CODE=$?
@@ -61,5 +61,10 @@ transfer_file() {
     fi
 }
 
+# Run for the signal files
 run_python "$SIGNAL"
 transfer_file "$SIGNAL"
+
+# Now for the Background files
+run_python "$BACKGROUND"
+transfer_file "$BACKGROUND"
