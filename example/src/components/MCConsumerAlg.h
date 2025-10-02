@@ -53,7 +53,7 @@ private:
     this, "CrossSection", 1.0, "Process cross-section [pb]"
   };
   Gaudi::Property<double> m_targetLuminosity{
-    this, "TargetLuminosity", 1.0, "Target luminosity [fb^-1]"
+    this, "TargetLuminosity", 1000.0, "Target luminosity [fb^-1]"
   };
 
   // Constant for the Recoil Mass

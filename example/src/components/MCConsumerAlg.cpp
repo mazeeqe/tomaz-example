@@ -98,12 +98,12 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
 
           muons.push_back({E, px, py, pz, pt2});
 
-          info() << "Muon candidate PDG=" << pdg
-                 << " E=" << E
-                 << " px=" << px
-                 << " py=" << py
-                 << " pz=" << pz
-                 << " pt2=" << pt2 << endmsg;
+          //info() << "Muon candidate PDG=" << pdg
+          //       << " E=" << E
+          //       << " px=" << px
+          //       << " py=" << py
+          //       << " pz=" << pz
+          //       << " pt2=" << pt2 << endmsg;
       }
   }
 
