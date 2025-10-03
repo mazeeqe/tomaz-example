@@ -61,10 +61,16 @@ transfer_file() {
     fi
 }
 
+echo "Starting signal files simulation"
+
 # Run for the signal files
 run_python "$SIGNAL"
 transfer_file "$SIGNAL"
 
+echo "Starting background files simulation"
+
 # Now for the Background files
 run_python "$BACKGROUND"
 transfer_file "$BACKGROUND"
+
+echo "Finished simulation"
