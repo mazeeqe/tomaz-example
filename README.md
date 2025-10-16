@@ -29,8 +29,33 @@ make install
 ```
 
 Running the code,
+The simulation is divided into two runs, for the signal and background files.
+The `init.sh` file does both runs and creates two separate output files. 
 To run the simulation, do the following command.
 
 ```bash
+cd build
+source source init.sh
+```
+
+The key4hep file can also be run individually, there's two run options
+`--signal` and `--background`. Without specfication, it will do the signal run.
+Running the code this way it will produce a `hist.root` file at the build folder.
+
+Without options, signal run:
+```bash
+cd build
 k4run ../example/options/run_example.py
+```
+
+With options, signal run:
+```bash
+cd build
+k4run ../example/options/run_example.py --signal
+```
+
+Background run:
+```bash
+cd build
+k4run ../example/options/run_example.py --background
 ```
