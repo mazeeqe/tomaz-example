@@ -44,7 +44,13 @@ run_python() {
 
 transfer_file() {
     local OPTIONS="$*"
-    DEST="${DEST_DIR}/${OPTIONS}_hist.root"
+
+    # Create a timestamp: 20251027_143210 (YYYYMMDD_HHMMSS)
+    local TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+
+    # Build the destination path with the timestamp inserted before the suffix
+    DEST="${DEST_DIR}/${OPTIONS}_${TIMESTAMP}_hist.root"
+
     # ---- 3. Make sure the destination directory exists ---------------------------
     if [[ ! -d "${DEST_DIR}" ]]; then
         echo "Creating destination folder: ${DEST_DIR}"
