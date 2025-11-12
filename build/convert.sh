@@ -47,8 +47,8 @@ while IFS= read -r -d '' src_file; do
     # 5️⃣  Run the conversion command
     # --------------------------------------------------------------
     echo "Converting: $src_file → $dst_file"
-    echo "[DRY‑RUN] Would run: lcio2edm4hep \"$src_file\" \"$dst_file\""
-    #lcio2edm4hep "$src_file" "$dst_file"
+    #echo "[DRY‑RUN] Would run: lcio2edm4hep \"$src_file\" \"$dst_file\""
+    lcio2edm4hep "$src_file" "$dst_file"
 
 done
 

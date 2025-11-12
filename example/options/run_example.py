@@ -11,15 +11,41 @@ from k4FWCore.parseArgs import parser
 # Arguments for the background files
 parser.add_argument("--signal", action="store_true", help="Run only track reconstruction", default=False)
 parser.add_argument("--background", action="store_true", help="Run only track reconstruction", default=False)
+parser.add_argument("--test", action="store_true", help="Run only track reconstruction", default=False)
 my_opts = parser.parse_known_args()[0]
 
 # ----------------------------------------------------------------------
 # Input importing
 # ----------------------------------------------------------------------
+import os
 import re
 from pathlib import Path
 from typing import List, Iterable, Union
 
+def collect_root_files(root_dir: str | os.PathLike) -> List[Path]:
+    """
+    Recursively collect all ROOT files (*.root) under ``root_dir``.
+
+    Parameters
+    ----------
+    root_dir : str or Path‑like
+        The top‑level directory to start the search from.
+
+    Returns
+    -------
+    List[Path]
+        A list of ``Path`` objects, each pointing to a discovered ROOT file.
+    """
+    # Ensure we are working with a Path object
+    base_path = Path(root_dir).expanduser().resolve()
+
+    if not base_path.is_dir():
+        raise NotADirectoryError(f"The supplied path is not a directory: {base_path}")
+
+    # Use rglob which yields matches recursively
+    root_files = [p for p in base_path.rglob("*.root") if p.is_file()]
+
+    return root_files
 
 def root_file_paths(
     parent_folder: str | Path,
@@ -190,6 +216,19 @@ evtSvc.inputs = source_list
 background_list = build_file_paths_regex(parent_dir, my_regex)
 if my_opts.background:
     evtSvc.inputs = background_list
+
+if my_opts.test:
+    # Replace this with the path to your top‑level folder
+    top_folder = "/afs/desy.de/user/b/bortolet/code/edm4hep_output"
+
+    try:
+        files = collect_root_files(top_folder)
+        print(f"Found {len(files)} ROOT file(s):")
+        evtSvc.inputs = files
+        #for f in files:
+        #    print(f)
+    except Exception as e:
+        print(f"Error: {e}")
 
 # Input: PODIO .root file with MCParticles
 podioinput = PodioInput("InputReader")
