@@ -43,7 +43,7 @@ def collect_root_files(root_dir: str | os.PathLike) -> List[Path]:
         raise NotADirectoryError(f"The supplied path is not a directory: {base_path}")
 
     # Use rglob which yields matches recursively
-    root_files = [p for p in base_path.rglob("*.root") if p.is_file()]
+    root_files = [str(p) for p in base_path.rglob("*.root") if p.is_file()]
 
     return root_files
 
