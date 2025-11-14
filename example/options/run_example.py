@@ -4,6 +4,16 @@ from Configurables import PodioInput, MCProducerAlg, MCConsumerAlg
 from Configurables import k4DataSvc
 
 # ----------------------------------------------------------------------
+# Custom arguments
+# ----------------------------------------------------------------------
+from k4FWCore.parseArgs import parser
+
+# Arguments for the background files
+parser.add_argument("--signal", action="store_true", help="Run only track reconstruction", default=False)
+parser.add_argument("--background", action="store_true", help="Run only track reconstruction", default=False)
+my_opts = parser.parse_known_args()[0]
+
+# ----------------------------------------------------------------------
 # Input importing
 # ----------------------------------------------------------------------
 import re
@@ -167,7 +177,6 @@ my_regex = (
     )
 
 
-background_list = build_file_paths_regex(parent_dir, my_regex)
 
 #For some reason running 1 and 2 crashes but 1 by itself worked
 # ----------------------------------------------------------------------
@@ -175,7 +184,12 @@ background_list = build_file_paths_regex(parent_dir, my_regex)
 # ----------------------------------------------------------------------
 
 evtSvc = k4DataSvc('EventDataSvc')
-evtSvc.inputs = background_list
+evtSvc.inputs = source_list
+
+# If the argument is for the background files
+background_list = build_file_paths_regex(parent_dir, my_regex)
+if my_opts.background:
+    evtSvc.inputs = background_list
 
 # Input: PODIO .root file with MCParticles
 podioinput = PodioInput("InputReader")
@@ -197,7 +211,7 @@ ApplicationMgr(
     # provide list and order of algorithms
     TopAlg=[podioinput, producer, consumer],
     EvtSel="NONE",
-    EvtMax=1000,
+    EvtMax=10000,
     ExtSvc=[evtSvc],
     OutputLevel=INFO
 )

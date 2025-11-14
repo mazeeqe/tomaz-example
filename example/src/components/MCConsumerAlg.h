@@ -42,6 +42,19 @@ private:
   mutable float m_missingPy = 0.0;
   mutable float m_missingPz = 0.0;
 
+  // Monte Carlo weights
+  mutable float m_weight = 1.0;
+
+  // Run-level metadata (set from Python)
+  Gaudi::Property<int> m_numEventsGenerated{
+    this, "NumEventsGenerated", 10000, "Number of generated events"
+  };
+  Gaudi::Property<double> m_crossSection{
+    this, "CrossSection", 1.0, "Process cross-section [pb]"
+  };
+  Gaudi::Property<double> m_targetLuminosity{
+    this, "TargetLuminosity", 1000.0, "Target luminosity [fb^-1]"
+  };
 
   // Constant for the Recoil Mass
   Gaudi::Property<double> m_ecm{

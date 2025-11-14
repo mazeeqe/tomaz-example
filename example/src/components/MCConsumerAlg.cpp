@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <vector>
 #include "TLorentzVector.h"
+#include "TParameter.h"
 
 DECLARE_COMPONENT(MCConsumerAlg)
 
@@ -21,6 +22,13 @@ StatusCode MCConsumerAlg::initialize() {
   // Create ROOT file and TTree
   m_rootFile = new TFile("hist.root", "RECREATE");
   m_tree = new TTree("events", "Muon analysis");
+
+  // Compute event weight once
+  if (m_numEventsGenerated > 0) {
+    m_weight = (m_crossSection * m_targetLuminosity) / m_numEventsGenerated;
+  } else {
+    m_weight = 1.0; // default safeguard
+  }
 
   // Define branches
 
@@ -40,6 +48,9 @@ StatusCode MCConsumerAlg::initialize() {
   m_tree->Branch("missingPx",     &m_missingPx,     "missingPx/F");
   m_tree->Branch("missingPy",     &m_missingPy,     "missingPy/F");
   m_tree->Branch("missingPz",     &m_missingPz,     "missingPz/F");
+
+  // New branch: Monte Carlo weight
+  m_tree->Branch("weight", &m_weight, "weight/F");
 
   return StatusCode::SUCCESS;
 }
@@ -87,12 +98,12 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
 
           muons.push_back({E, px, py, pz, pt2});
 
-          info() << "Muon candidate PDG=" << pdg
-                 << " E=" << E
-                 << " px=" << px
-                 << " py=" << py
-                 << " pz=" << pz
-                 << " pt2=" << pt2 << endmsg;
+          //info() << "Muon candidate PDG=" << pdg
+          //       << " E=" << E
+          //       << " px=" << px
+          //       << " py=" << py
+          //       << " pz=" << pz
+          //       << " pt2=" << pt2 << endmsg;
       }
   }
 
@@ -170,6 +181,12 @@ StatusCode MCConsumerAlg::execute(const EventContext&) const {
     if (m_rootFile) {
     m_rootFile->cd();
     if (m_tree) m_tree->Write();
+
+    // Store run-level metadata as TParameters
+    TParameter<int>("NumEventsGenerated", m_numEventsGenerated).Write();
+    TParameter<double>("CrossSection_pb", m_crossSection).Write();
+    TParameter<double>("TargetLuminosity_fb", m_targetLuminosity).Write();
+
     m_rootFile->Close();
     delete m_rootFile;
     m_rootFile = nullptr;
