@@ -4,6 +4,22 @@ from Configurables import PodioInput, MCProducerAlg, MCConsumerAlg
 from Configurables import k4DataSvc
 
 # ----------------------------------------------------------------------
+# Lcio to EDM4hep file convertion 
+# ----------------------------------------------------------------------
+
+from Configurables import MarlinProcessorWrapper
+from Configurables import Lcio2EDM4hepTool
+
+lcio2edm4hepConv = Lcio2EDM4hepTool("Lcio2EDM4hep")
+
+wrappedProcAlg = MarlinProcessorWrapper("ProcessorToWrap")
+wrappedProcAlg.Lcio2EDM4hepTool = lcio2edm4hepConv
+lcio2edm4hepConv = Lcio2EDM4hepTool("Lcio2EDM4hep")
+#lcio2edm4hepConv.collNameMapping = {"MCParticle": "MCParticles",
+#                                    "PandoraPFOs":"ReconstructedParticle", #inverter
+#                                    "MCParticlesSkimmed": "MCParticle"} #inverter e ver se tem conflito
+
+# ----------------------------------------------------------------------
 # Custom arguments
 # ----------------------------------------------------------------------
 from k4FWCore.parseArgs import parser
