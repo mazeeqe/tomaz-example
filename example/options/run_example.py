@@ -8,7 +8,7 @@ from Configurables import k4DataSvc
 # ----------------------------------------------------------------------
 from k4FWCore.parseArgs import parser
 
-# Arguments for the background files
+# Arguments to choose the type of input files for signal, background and test.
 parser.add_argument("--signal", action="store_true", help="Run only track reconstruction", default=False)
 parser.add_argument("--background", action="store_true", help="Run only track reconstruction", default=False)
 parser.add_argument("--test", action="store_true", help="Run only track reconstruction", default=False)
@@ -43,7 +43,14 @@ def collect_root_files(root_dir: str | os.PathLike) -> List[Path]:
         raise NotADirectoryError(f"The supplied path is not a directory: {base_path}")
 
     # Use rglob which yields matches recursively
-    root_files = [str(p) for p in base_path.rglob("*.root") if p.is_file()]
+    MAX_FILES = 10
+    root_files = []
+
+    for p in base_path.rglob("*.root"):
+        if p.is_file():
+            root_files.append(str(p))
+            if len(root_files) >= MAX_FILES:
+                break   # stop once we’ve collected enough files
 
     return root_files
 
