@@ -38,7 +38,7 @@ import re
 from pathlib import Path
 from typing import List, Iterable, Union
 
-def collect_root_files(root_dir: str | os.PathLike) -> List[Path]:
+def collect_root_files(root_dir: str | os.PathLike, max_files: 10) -> List[Path]:
     """
     Recursively collect all ROOT files (*.root) under ``root_dir``.
 
@@ -59,13 +59,12 @@ def collect_root_files(root_dir: str | os.PathLike) -> List[Path]:
         raise NotADirectoryError(f"The supplied path is not a directory: {base_path}")
 
     # Use rglob which yields matches recursively
-    MAX_FILES = 10
     root_files = []
 
     for p in base_path.rglob("*.root"):
         if p.is_file():
             root_files.append(str(p))
-            if len(root_files) >= MAX_FILES:
+            if len(root_files) >= max_files:
                 break   # stop once we’ve collected enough files
 
     return root_files
