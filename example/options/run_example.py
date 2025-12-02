@@ -7,8 +7,7 @@ from Configurables import k4DataSvc
 # Lcio to EDM4hep file convertion 
 # ----------------------------------------------------------------------
 
-from Configurables import MarlinProcessorWrapper
-from Configurables import Lcio2EDM4hepTool
+from Configurables import MarlinProcessorWrapper, Lcio2EDM4hepTool, LcioEvent
 
 lcio2edm4hepConv = Lcio2EDM4hepTool("Lcio2EDM4hep")
 
@@ -18,6 +17,9 @@ lcio2edm4hepConv = Lcio2EDM4hepTool("Lcio2EDM4hep")
 #lcio2edm4hepConv.collNameMapping = {"MCParticle": "MCParticles",
 #                                    "PandoraPFOs":"ReconstructedParticle", #inverter
 #                                    "MCParticlesSkimmed": "MCParticle"} #inverter e ver se tem conflito
+
+read = LcioEvent()
+#read.Files = ["inputfile1.slcio", "inputfile2.slcio"]
 
 # ----------------------------------------------------------------------
 # Custom arguments
@@ -38,7 +40,7 @@ import re
 from pathlib import Path
 from typing import List, Iterable, Union
 
-def collect_root_files(root_dir: str | os.PathLike, max_files: 10) -> List[Path]:
+def collect_root_files(root_dir: str | os.PathLike, max_files=10) -> List[Path]:
     """
     Recursively collect all ROOT files (*.root) under ``root_dir``.
 
@@ -247,8 +249,8 @@ if my_opts.test:
         files = collect_root_files(top_folder)
         print(f"Found {len(files)} ROOT file(s):")
         evtSvc.inputs = files
-        #for f in files:
-        #    print(f)
+        for f in files:
+            print(f)
     except Exception as e:
         print(f"Error: {e}")
 

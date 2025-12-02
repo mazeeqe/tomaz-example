@@ -282,3 +282,47 @@ entry=0x7fff039af3b8) at Python/pythonrun.c:79
 #38 0x0000000000401075 in _start ()
 ===========================================================
 
+1 de dezembro
+
+k4run ../example/options/run_example.py --test
+Found 10 ROOT file(s):
+/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n005.d_dstm_15111_38.edm4hep.root
+/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n004.d_dstm_15111_31.edm4hep.root
+/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n000.d_dstm_15110_0.edm4hep.root
+/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n004.d_dstm_15111_30.edm4hep.root
+/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n006.d_dstm_15111_52.edm4hep.root
+/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n007.d_dstm_15111_56.edm4hep.root
+/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n007.d_dstm_15111_60.edm4hep.root
+/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n008.d_dstm_15111_72.edm4hep.root
+/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n005.d_dstm_15111_41.edm4hep.root
+/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n000.d_dstm_15110_5.edm4hep.root
+[k4run] --> InputReader --> MCProducer --> MCConsumer
+[k4run] Option name: EventDataSvc.OutputLevel 0
+[k4run] Option name: EventDataSvc.inputs ['/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n005.d_dstm_15111_38.edm4hep.root', '/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n004.d_dstm_15111_31.edm4hep.root', '/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n000.d_dstm_15110_0.edm4hep.root', '/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n004.d_dstm_15111_30.edm4hep.root', '/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n006.d_dstm_15111_52.edm4hep.root', '/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n007.d_dstm_15111_56.edm4hep.root', '/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n007.d_dstm_15111_60.edm4hep.root', '/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n008.d_dstm_15111_72.edm4hep.root', '/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n005.d_dstm_15111_41.edm4hep.root', '/afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n000.d_dstm_15110_5.edm4hep.root']
+[k4run] Option name: EventDataSvc.input 
+[k4run] Option name: EventDataSvc.FirstEventEntry 0
+[k4run] Option name: MCProducer.OutputLevel 3
+[k4run] Option name: MCConsumer.OutputLevel 0
+[k4run] Option name: MCConsumer.NumEventsGenerated 10000
+[k4run] Option name: MCConsumer.CrossSection 1.0
+[k4run] Option name: MCConsumer.TargetLuminosity 1.0
+[k4run] Option name: MCConsumer.CollisionEnergy 250.0
+[k4run] Option name: ProcessorToWrap.OutputLevel 0
+[k4run] Option name: ProcessorToWrap.ProcessorType 
+[k4run] Option name: ProcessorToWrap.Parameters {}
+[k4run] Option name: InputReader.OutputLevel 0
+[k4run] Option name: InputReader.collections ['PandoraPFOs', 'EventHeader', 'MCParticlesSkimmed']
+[k4run] Option name: LcioEvent.OutputLevel 0
+[k4run] Option name: LcioEvent.Files []
+ApplicationMgr    SUCCESS 
+====================================================================================================================================
+                                                   Welcome to ApplicationMgr (GaudiCoreSvc v38r3)
+                                          running on naf-ilc22.desy.de on Tue Dec  2 02:18:57 2025
+====================================================================================================================================
+ApplicationMgr       INFO Application Manager Configured successfully
+TFile::Init       WARNING file /afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n005.d_dstm_15111_38.edm4hep.root has no keys
+TChain::AddFile     ERROR cannot find tree with name podio_metadata in file /afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n005.d_dstm_15111_38.edm4hep.root
+EventDataSvc        FATAL in sysInitialize(): standard std::exception is caught
+EventDataSvc        ERROR File /afs/desy.de/user/b/bortolet/code/edm4hep_output/4f_WW_semileptonic/ILD_l5_o1_v02/v02-02/rv02-02.sv02-02.mILD_l5_o1_v02.E250-SetA.I500084.P4f_ww_sl.eR.pL.n005.d_dstm_15111_38.edm4hep.root couldn't be found or the "podio_metadata" tree couldn't be read.
+ServiceManager      ERROR Unable to initialize Service: EventDataSvc
+ApplicationMgr      ERROR Application Manager Terminated with error code 1
