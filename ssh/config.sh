@@ -13,11 +13,14 @@ REMOTE_OUTPUT_DIR="/afs/desy.de/user/b/bortolet/code/tomaz-example"
 
 # Setup Commands
 SETUP_COMMANDS=(
-    "source /cvmfs/sw.hsf.org/key4hep/setup.sh -r 2025-01-28"
+    "source /cvmfs/sw.hsf.org/key4hep/setup.sh -r 2025-05-29"
     "cd code/tomaz-example/"
     "source setup.sh"
     "cd build"
 )
+
+# Antigo
+#"source /cvmfs/sw.hsf.org/key4hep/setup.sh -r 2025-01-28"
 
 #remote to local
 # rsync -avhP bortolet@naf-ilc.desy.de:/afs/desy.de/user/b/bortolet/code/tomaz-example /home/mazeeqe/Documents/mestrado/code/

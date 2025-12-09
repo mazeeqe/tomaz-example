@@ -27,8 +27,8 @@ mkdir -p "$DST_ROOT"
 echo "Source folder: $SRC_ROOT"
 echo "Output folder: $DST_ROOT"
 
-mkdir -p "$COPY_ROOT"
-echo "Copied Folder: $COPY_ROOT"
+#mkdir -p "$COPY_ROOT"
+#echo "Copied Folder: $COPY_ROOT"
 # ------------------------------------------------------------------
 # 4  Add patch file
 # ------------------------------------------------------------------
@@ -37,7 +37,7 @@ PATCH="patch.txt"
 # ------------------------------------------------------------------
 # 5  Find every *.slcio file (recursively) and process it
 # ------------------------------------------------------------------
-max_files=50          # stop after we’ve processed this many files
+max_files=5          # stop after we’ve processed this many files
 processed=0           # counter
 
 find "$SRC_ROOT" -type f -name '*eR.pL*.slcio' -print0 |
@@ -55,9 +55,9 @@ while IFS= read -r -d '' src_file; do
     # Preserve the relative directory structure under $COPY_ROOT
     rel_copy_path="${src_file#*${RELATIVE_FROM}/}"
     copy_target="${COPY_ROOT}/${rel_copy_path}"
-    mkdir -p "$(dirname "$copy_target")"
-    cp -a "$src_file" "$copy_target"
-    echo "Copied: $src_file → $copy_target"
+    #mkdir -p "$(dirname "$copy_target")"
+    #cp -a "$src_file" "$copy_target"
+    #echo "Copied: $src_file → $copy_target"
 
     # --------------------------------------------------------------
     # Strip everything up to (and including) the chosen anchor folder
@@ -76,12 +76,12 @@ while IFS= read -r -d '' src_file; do
     # --------------------------------------------------------------
     # 5️⃣  Run the conversion command
     # --------------------------------------------------------------
-    #echo "Converting ($processed/$max_files): $src_file → $dst_file"
+    echo "Converting ($processed/$max_files): $src_file → $dst_file"
     # Dry‑run line kept for reference – remove/comment out if you don’t need it
-    echo "[DRY‑RUN] Would run: lcio2edm4hep \"$src_file\" \"$dst_file\""
+    #echo "[DRY‑RUN] Would run: lcio2edm4hep \"$src_file\" \"$dst_file\""
 
     # Actual conversion
-    #lcio2edm4hep "$src_file" "$dst_file"
+    lcio2edm4hep "$src_file" "$dst_file"
 done
 
 #/pnfs/desy.de/ilc/prod/ilc/mc-2020/ild/dst-merged/250-SetA/
