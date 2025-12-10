@@ -15,7 +15,7 @@
 ########################
 
 //Path to a file.
-AIDA_INCLUDE_DIRS:PATH=/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/raida/1.11-day3oi/include
+AIDA_INCLUDE_DIRS:PATH=/cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/raida/1.11-ufnl6o/include
 
 //Build the testing tree.
 BUILD_TESTING:BOOL=ON
@@ -146,7 +146,7 @@ CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 CMAKE_LINKER:FILEPATH=/usr/bin/ld
 
 //Path to a program.
-CMAKE_MAKE_PROGRAM:FILEPATH=/cvmfs/sw.hsf.org/key4hep/releases/2024-10-28/x86_64-almalinux9-gcc14.2.0-opt/gmake/4.4.1-gce5ss/bin/gmake
+CMAKE_MAKE_PROGRAM:FILEPATH=/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gmake/4.4.1-gce5ss/bin/gmake
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -271,7 +271,7 @@ CTEST_SUBMIT_RETRY_DELAY:STRING=5
 DART_TESTING_TIMEOUT:STRING=1500
 
 //The directory containing a CMake configuration file for EDM4HEP.
-EDM4HEP_DIR:PATH=/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.1-zincmm/lib/cmake/EDM4HEP
+EDM4HEP_DIR:PATH=/cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.2-sgaasm/lib/cmake/EDM4HEP
 
 //Prevent genconf to fail (for builds with a sanitizer)
 GAUDI_GENCONF_NO_FAIL:BOOL=OFF
@@ -530,7 +530,7 @@ fmt_DIR:PATH=/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc
 jemalloc_LIBRARY:FILEPATH=/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/jemalloc/5.3.0-l6t6vp/lib/libjemalloc.so
 
 //The directory containing a CMake configuration file for k4FWCore.
-k4FWCore_DIR:PATH=/cvmfs/sw.hsf.org/key4hep/releases/2024-10-28/x86_64-almalinux9-gcc14.2.0-opt/k4fwcore/1.1.2-7yb5p4/lib/cmake/k4FWCore
+k4FWCore_DIR:PATH=/cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/k4fwcore/1.3-lix236/lib/cmake/k4FWCore
 
 //Value Computed by CMake
 k4ProjectTemplate_BINARY_DIR:STATIC=/afs/desy.de/user/b/bortolet/code/tomaz-example/build
@@ -548,7 +548,7 @@ nlohmann_json_DIR:PATH=/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-alma
 pkgcfg_lib_gperftools_profiler:FILEPATH=/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gperftools/2.15-ajhgje/lib/libprofiler.so
 
 //The directory containing a CMake configuration file for podio.
-podio_DIR:PATH=/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/lib/cmake/podio
+podio_DIR:PATH=/cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/podio/1.3-njsv57/lib/cmake/podio
 
 //Path to a library.
 rt_LIBRARY:FILEPATH=/usr/lib64/librt.a
@@ -744,9 +744,9 @@ CTEST_SUBMIT_RETRY_DELAY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DART_TESTING_TIMEOUT
 DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
 //Details about finding AIDA
-FIND_PACKAGE_MESSAGE_DETAILS_AIDA:INTERNAL=[/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/raida/1.11-day3oi/include][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_AIDA:INTERNAL=[/cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/raida/1.11-ufnl6o/include][v()]
 //Details about finding EDM4HEP
-FIND_PACKAGE_MESSAGE_DETAILS_EDM4HEP:INTERNAL=[/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.1-zincmm/lib/cmake/EDM4HEP/EDM4HEPConfig.cmake][/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.1-zincmm/lib/libedm4hep.so][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_EDM4HEP:INTERNAL=[/cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.2-sgaasm/lib/cmake/EDM4HEP/EDM4HEPConfig.cmake][/cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.2-sgaasm/lib/libedm4hep.so][v(0.99.2)]
 //Details about finding HepPDT
 FIND_PACKAGE_MESSAGE_DETAILS_HepPDT:INTERNAL=[/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/heppdt/2.06.01-27vxgh/include][/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/heppdt/2.06.01-27vxgh/lib/libHepPDT.so;/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/heppdt/2.06.01-27vxgh/lib/libHepPID.so][v2.06.01()]
 //Details about finding PkgConfig
@@ -772,11 +772,11 @@ FIND_PACKAGE_MESSAGE_DETAILS_cppgsl:INTERNAL=[/cvmfs/sw.hsf.org/key4hep/releases
 //Details about finding jemalloc
 FIND_PACKAGE_MESSAGE_DETAILS_jemalloc:INTERNAL=[/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/jemalloc/5.3.0-l6t6vp/lib/libjemalloc.so][v()]
 //Details about finding k4FWCore
-FIND_PACKAGE_MESSAGE_DETAILS_k4FWCore:INTERNAL=[/cvmfs/sw.hsf.org/key4hep/releases/2024-10-28/x86_64-almalinux9-gcc14.2.0-opt/k4fwcore/1.1.2-7yb5p4/lib/cmake/k4FWCore/k4FWCoreConfig.cmake][/cvmfs/sw.hsf.org/key4hep/releases/2024-10-28/x86_64-almalinux9-gcc14.2.0-opt/k4fwcore/1.1.2-7yb5p4/lib/libk4FWCore.so][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_k4FWCore:INTERNAL=[/cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/k4fwcore/1.3-lix236/lib/cmake/k4FWCore/k4FWCoreConfig.cmake][/cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/k4fwcore/1.3-lix236/lib/libk4FWCore.so][v()]
 //Details about finding nlohmann_json
 FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/nlohmann-json/3.11.3-wv4sd3/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake][v3.11.3()]
 //Details about finding podio
-FIND_PACKAGE_MESSAGE_DETAILS_podio:INTERNAL=[/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/lib/cmake/podio/podioConfig.cmake][/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/lib/libpodio.so][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_podio:INTERNAL=[/cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/podio/1.3-njsv57/lib/cmake/podio/podioConfig.cmake][/cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/podio/1.3-njsv57/lib/libpodio.so][v(1.3.0)]
 //Details about finding unwind
 FIND_PACKAGE_MESSAGE_DETAILS_unwind:INTERNAL=[/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/llvm/17.0.6-7m4ago/include][/cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/libunwind/1.6.2-rzjbo5/lib/libunwind.so][v()]
 //Version of C++ used to compile Gaudi

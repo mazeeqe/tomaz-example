@@ -491,16 +491,15 @@ example/CMakeFiles/k4ProjectTemplatePlugins.dir/src/components/MCProducerAlg.cpp
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/DataHandleHolderBase.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/IDataHandleHolder.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/IAlgExecStateSvc.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.1-zincmm/include/edm4hep/MCParticleCollection.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.1-zincmm/include/edm4hep/MCParticle.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.1-zincmm/include/edm4hep/MCParticleObj.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.1-zincmm/include/edm4hep/MCParticleData.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.1-zincmm/include/edm4hep/Vector2i.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.2-sgaasm/include/edm4hep/MCParticleCollection.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.2-sgaasm/include/edm4hep/MCParticle.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.2-sgaasm/include/edm4hep/MCParticleObj.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.2-sgaasm/include/edm4hep/MCParticleData.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.2-sgaasm/include/edm4hep/Vector3d.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.2-sgaasm/include/edm4hep/Vector3f.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/nlohmann-json/3.11.3-wv4sd3/include/nlohmann/json_fwd.hpp \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/nlohmann-json/3.11.3-wv4sd3/include/nlohmann/detail/abi_macros.hpp \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.1-zincmm/include/edm4hep/Vector3d.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.1-zincmm/include/edm4hep/Vector3f.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/ObjectID.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/podio/1.3-njsv57/include/podio/ObjectID.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/nlohmann-json/3.11.3-wv4sd3/include/nlohmann/json.hpp \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/nlohmann-json/3.11.3-wv4sd3/include/nlohmann/adl_serializer.hpp \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/nlohmann-json/3.11.3-wv4sd3/include/nlohmann/detail/conversions/from_json.hpp \
@@ -564,119 +563,22 @@ example/CMakeFiles/k4ProjectTemplatePlugins.dir/src/components/MCProducerAlg.cpp
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/nlohmann-json/3.11.3-wv4sd3/include/nlohmann/ordered_map.hpp \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/nlohmann-json/3.11.3-wv4sd3/include/nlohmann/detail/macro_unscope.hpp \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/nlohmann-json/3.11.3-wv4sd3/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.1-zincmm/include/edm4hep/utils/bit_utils.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/RelationRange.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/utilities/MaybeSharedPtr.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.1-zincmm/include/edm4hep/MutableMCParticle.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.1-zincmm/include/edm4hep/MCParticleCollectionData.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/CollectionBuffers.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/SchemaEvolution.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/ICollectionProvider.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/CollectionBase.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-28/x86_64-almalinux9-gcc14.2.0-opt/k4fwcore/1.1.2-7yb5p4/include/k4FWCore/DataHandle.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-28/x86_64-almalinux9-gcc14.2.0-opt/k4fwcore/1.1.2-7yb5p4/include/k4FWCore/DataWrapper.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-28/x86_64-almalinux9-gcc14.2.0-opt/k4fwcore/1.1.2-7yb5p4/include/k4FWCore/PodioDataSvc.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/DataSvc.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/IDataManagerSvc.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/IDataStoreAgent.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/IIncidentSvc.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/EventContextHash.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/Incident.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/RegistryEntry.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/IRegistry.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/Service.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/CollectionIDTable.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/Frame.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/CollectionBufferFactory.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/FrameCategories.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/GenericParameters.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/utilities/TypeHelpers.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/ROOTReader.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/ROOTFrameData.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/podioVersion.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/utilities/DatamodelRegistryIOHelpers.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/DatamodelRegistry.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/podio/1.1-ur2cnz/include/podio/utilities/RootHelpers.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/RVec.hxx \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/Rtypes.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/RtypesCore.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/RConfig.hxx \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/../RVersion.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/../ROOT/RVersion.hxx \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/RConfigure.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/DllImport.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/strtok.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/strlcpy.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/snprintf.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TGenericClassInfo.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TSchemaHelper.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TIsAProxy.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TVirtualIsAProxy.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TError.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/DllImport.h \
- /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/lib/gcc/x86_64-pc-linux-gnu/14.2.0/../../../../include/c++/14.2.0/cstdarg \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/vdtMath.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/sin.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/sincos.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/vdtcore_common.h \
- /usr/include/inttypes.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/asin.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/cos.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/tan.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/tanh.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/atan.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/atan2.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/exp.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/log.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/sqrt.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/inv.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/vdt/0.4.4-feme7a/include/vdt/identity.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TBranch.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TNamed.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TObject.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/Rtypes.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TStorage.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TVersionCheck.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/RVersion.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TString.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TMathBase.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/TypeTraits.hxx \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TAttFill.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TObjArray.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TSeqCollection.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TCollection.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TIterator.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TVirtualRWMutex.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TVirtualMutex.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/RRangeCast.hxx \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/RSpan.hxx \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/span.hxx \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TBranchCacheInfo.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TBits.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TDataType.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TDictionary.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ESTLType.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/Compression.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/TIOFeatures.hxx \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TChain.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TTree.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TArrayD.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TArray.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TArrayI.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TAttLine.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TAttMarker.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TClass.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TDirectory.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TUUID.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TList.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TBuffer.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/Bytes.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/Byteswap.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TVirtualTreePlayer.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TBranch.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/DataObjectHandle.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.2-sgaasm/include/edm4hep/utils/bit_utils.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/podio/1.3-njsv57/include/podio/RelationRange.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/podio/1.3-njsv57/include/podio/utilities/MaybeSharedPtr.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/podio/1.3-njsv57/include/podio/detail/OrderKey.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.2-sgaasm/include/edm4hep/MutableMCParticle.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/edm4hep/0.99.2-sgaasm/include/edm4hep/MCParticleCollectionData.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/podio/1.3-njsv57/include/podio/CollectionBuffers.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/podio/1.3-njsv57/include/podio/SchemaEvolution.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/podio/1.3-njsv57/include/podio/ICollectionProvider.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/podio/1.3-njsv57/include/podio/CollectionBase.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/k4fwcore/1.3-lix236/include/k4FWCore/DataHandle.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2025-05-29/x86_64-almalinux9-gcc14.2.0-opt/k4fwcore/1.3-lix236/include/k4FWCore/DataWrapper.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/AnyDataWrapper.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/DataObjectHandle.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/DataObjectHandleBase.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/IRegistry.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/NamedRange.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/gaudi/38.3-6rlwni/include/GaudiKernel/Range.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/boost/1.86.0-4bdqk5/include/boost/algorithm/string/replace.hpp \
@@ -1010,11 +912,32 @@ example/CMakeFiles/k4ProjectTemplatePlugins.dir/src/components/MCProducerAlg.cpp
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/boost/1.86.0-4bdqk5/include/boost/algorithm/string/detail/util.hpp \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TLorentzVector.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TMath.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TMathBase.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/RtypesCore.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/RConfig.hxx \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/../RVersion.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/../ROOT/RVersion.hxx \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/RConfigure.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/DllImport.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TError.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/DllImport.h \
+ /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/lib/gcc/x86_64-pc-linux-gnu/14.2.0/../../../../include/c++/14.2.0/cstdarg \
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/lib/gcc/x86_64-pc-linux-gnu/14.2.0/../../../../include/c++/14.2.0/cfloat \
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/lib/gcc/x86_64-pc-linux-gnu/14.2.0/include/float.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TVector3.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TVector2.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TObject.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/Rtypes.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/strtok.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/strlcpy.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/snprintf.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TGenericClassInfo.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TSchemaHelper.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TIsAProxy.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TVirtualIsAProxy.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TStorage.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TVersionCheck.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/RVersion.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TMatrix.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TMatrixF.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TMatrixT.h \
@@ -1047,10 +970,34 @@ example/CMakeFiles/k4ProjectTemplatePlugins.dir/src/components/MCProducerAlg.cpp
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/Math/GenVector/BitReproducible.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/Math/GenVector/CoordinateSystemTags.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TFile.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/Compression.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TDirectoryFile.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TDirectory.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TNamed.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TString.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/TypeTraits.hxx \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TClass.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TDictionary.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ESTLType.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TObjArray.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TSeqCollection.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TCollection.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TIterator.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TVirtualRWMutex.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TVirtualMutex.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/RRangeCast.hxx \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/RSpan.hxx \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/span.hxx \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TUUID.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TList.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TBuffer.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TDataType.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/Bytes.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/Byteswap.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TDatime.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TUrl.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/RConcurrentHashColl.hxx \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/Rtypes.h \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/TRWSpinLock.hxx \
  /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/TSpinMutex.hxx \
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/lib/gcc/x86_64-pc-linux-gnu/14.2.0/../../../../include/c++/14.2.0/condition_variable \
@@ -1061,4 +1008,15 @@ example/CMakeFiles/k4ProjectTemplatePlugins.dir/src/components/MCProducerAlg.cpp
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/lib/gcc/x86_64-pc-linux-gnu/14.2.0/../../../../include/c++/14.2.0/bits/atomic_timed_wait.h \
  /cvmfs/sw.hsf.org/contrib/x86_64-almalinux9-gcc11.4.1-opt/gcc/14.2.0-yuyjov/lib/gcc/x86_64-pc-linux-gnu/14.2.0/../../../../include/c++/14.2.0/bits/this_thread_sleep.h \
  /usr/include/semaphore.h /usr/include/bits/semaphore.h \
- /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TTree.h
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TTree.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/ROOT/TIOFeatures.hxx \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TArrayD.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TArray.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TArrayI.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TAttFill.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TAttLine.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TAttMarker.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TVirtualTreePlayer.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TBranch.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TBranchCacheInfo.h \
+ /cvmfs/sw.hsf.org/key4hep/releases/2024-10-03/x86_64-almalinux9-gcc14.2.0-opt/root/6.32.04-vms5ij/include/root/TBits.h

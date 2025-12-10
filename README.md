@@ -37,7 +37,7 @@ To run the simulation, do the following command.
 
 ```bash
 cd build
-source source init.sh
+source init.sh
 ```
 
 After the Simulation is finished, the resulting files, `signal_hist.root` and `background_hist.root`, are located `output_files` folder.

@@ -1,4 +1,4 @@
-#Wed Sep 24 23:36:56 2025"""Automatically generated. DO NOT EDIT please"""
+#Wed Dec 10 02:16:59 2025"""Automatically generated. DO NOT EDIT please"""
 import sys
 if sys.version_info >= (3,):
     # Python 2 compatibility
@@ -30,7 +30,7 @@ class MCConsumerAlg( ConfigurableAlgorithm ) :
     'FilterCircularDependencies' : True,
     'NumEventsGenerated' : 10000,
     'CrossSection' : 1.0000000,
-    'TargetLuminosity' : 1.0000000,
+    'TargetLuminosity' : 1000.0000,
     'CollisionEnergy' : 250.00000,
     'RecoParticleColl' : DataHandle('RecoParticleColl', 'R', 'DataWrapper<edm4hep::ReconstructedParticleCollection>'),
   }
