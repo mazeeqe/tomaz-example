@@ -8,17 +8,19 @@ Date: 16 of October, 2025
 
 ### Installation
 
+Start by sourcing the desired Key4hep version
 ```bash
 source /cvmfs/sw.hsf.org/key4hep/setup.sh -r 2025-01-28
 git clone https://github.com/mazeeqe/tomaz-example.git
 ```
 
+In case of change in the version of Key4hep, it's maybe necessary to re-complie the code. Start by deleting the `build` and `install` folders and do the following process:
 To compile and run the code change to the build folder
 
 ```bash
 cd tomaz-example/
 source setup.sh
-mkdir build install #Tirar
+mkdir build install
 cd build
 ```
 

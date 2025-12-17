@@ -1,25 +1,20 @@
+from k4FWCore import IOSvc
+from k4MarlinWrapper.io_helpers import IOHandlerHelper
+from Configurables import MarlinProcessorWrapper
+
+# ----------------------------------------------------------------------
+# Old Import section
+# ----------------------------------------------------------------------
+
 from Gaudi.Configuration import *
 from Gaudi.Configuration import ApplicationMgr
-from Configurables import PodioInput, MCProducerAlg, MCConsumerAlg
-from Configurables import k4DataSvc
+from Configurables import MCConsumerAlg #MCProducerAlg
 
 # ----------------------------------------------------------------------
 # Lcio to EDM4hep file convertion 
 # ----------------------------------------------------------------------
 
-from Configurables import MarlinProcessorWrapper, Lcio2EDM4hepTool, LcioEvent
-
-lcio2edm4hepConv = Lcio2EDM4hepTool("Lcio2EDM4hep")
-
-wrappedProcAlg = MarlinProcessorWrapper("ProcessorToWrap")
-wrappedProcAlg.Lcio2EDM4hepTool = lcio2edm4hepConv
-lcio2edm4hepConv = Lcio2EDM4hepTool("Lcio2EDM4hep")
-#lcio2edm4hepConv.collNameMapping = {"MCParticle": "MCParticles",
-#                                    "PandoraPFOs":"ReconstructedParticle", #inverter
-#                                    "MCParticlesSkimmed": "MCParticle"} #inverter e ver se tem conflito
-
-read = LcioEvent()
-#read.Files = ["inputfile1.slcio", "inputfile2.slcio"]
+from Configurables import MarlinProcessorWrapper, Lcio2EDM4hepTool
 
 # ----------------------------------------------------------------------
 # Custom arguments
@@ -27,9 +22,9 @@ read = LcioEvent()
 from k4FWCore.parseArgs import parser
 
 # Arguments to choose the type of input files for signal, background and test.
-parser.add_argument("--signal", action="store_true", help="Run only track reconstruction", default=False)
-parser.add_argument("--background", action="store_true", help="Run only track reconstruction", default=False)
-parser.add_argument("--test", action="store_true", help="Run only track reconstruction", default=False)
+parser.add_argument("--signal", action="store_true", help="Signal files simulation", default=False)
+parser.add_argument("--background", action="store_true", help="Background files simulation", default=False)
+parser.add_argument("--test", action="store_true", help="Simulation with test files", default=False)
 my_opts = parser.parse_known_args()[0]
 
 # ----------------------------------------------------------------------
@@ -38,9 +33,9 @@ my_opts = parser.parse_known_args()[0]
 import os
 import re
 from pathlib import Path
-from typing import List, Iterable, Union
+from typing import List, Iterable, Union, Literal
 
-def collect_root_files(root_dir: str | os.PathLike, max_files=10) -> List[Path]:
+def collect_root_files(root_dir: str | os.PathLike, max_files: 10) -> List[Path]:
     """
     Recursively collect all ROOT files (*.root) under ``root_dir``.
 
@@ -70,6 +65,44 @@ def collect_root_files(root_dir: str | os.PathLike, max_files=10) -> List[Path]:
                 break   # stop once we’ve collected enough files
 
     return root_files
+
+def collect_files(
+    root_dir: str | os.PathLike,
+    file_type: Literal["root", "slcio"] = "root",
+    max_files: int = 10,
+) -> List[str]:
+    """
+    Recursively collect files of a given type under ``root_dir``.
+
+    Parameters
+    ----------
+    root_dir : str or Path-like
+        The top-level directory to start the search from.
+    file_type : {"root", "slcio"}
+        File type to search for.
+    max_files : int
+        Maximum number of files to collect.
+
+    Returns
+    -------
+    List[str]
+        A list of file paths as strings.
+    """
+    base_path = Path(root_dir).expanduser().resolve()
+
+    if not base_path.is_dir():
+        raise NotADirectoryError(f"The supplied path is not a directory: {base_path}")
+
+    pattern = f"*.{file_type}"
+    files: List[str] = []
+
+    for p in base_path.rglob(pattern):
+        if p.is_file():
+            files.append(str(p))
+            if len(files) >= max_files:
+                break
+
+    return files
 
 def root_file_paths(
     parent_folder: str | Path,
@@ -138,14 +171,6 @@ def root_file_paths(
 
     return result
 
-
-# The ROOT files sit in “…/tomaz-example/input_files”
-parent_dir = "../input_files"
-
-# Get the 12 file paths
-source_list = root_file_paths(parent_dir,
-                    include=range(2,13)
- )
 
 def build_file_paths_regex(
     parent_dir: Union[str, Path],
@@ -221,60 +246,141 @@ def build_file_paths_regex(
 
     return matched_strings
 
+
+# ----------------------------------------------------------------------
+# io_svc code
+# ----------------------------------------------------------------------
+
+io_svc = IOSvc("IOSvc")
+
+# List of algorithms to be used
+algs = []
+
+# ----------------------------------------------------------------------
+# Signal Files
+# ----------------------------------------------------------------------
+
+# The ROOT files sit in “…/tomaz-example/input_files”
+parent_dir = "../input_files"
+
+# Get the 12 file paths
+source_list = root_file_paths(parent_dir,
+                    include=range(1,13)
+ )
+
+io_svc.Input = source_list
+
+# ----------------------------------------------------------------------
+# Background Files
+# ----------------------------------------------------------------------
+
 my_regex = (
         r"^rv02-02-01\.sv02-02\.mILD_l5_o2_v02\.E250-SetA\.I500078\."
         r"P4f_zznu_sl\.eL\.pR\.n000_\d{3}\.d_dst_00015656_\d+\.root$"
     )
 
+#background_list = build_file_paths_regex(parent_dir, my_regex)
+if my_opts.background:
+    top_folder = "/afs/desy.de/user/b/bortolet/code/edm4hep_output"
+    root_files = collect_files(top_folder, file_type="root", max_files=1)
+    print("Background Files Choosen.")
+    io_svc.Input = root_files
+
+# ----------------------------------------------------------------------
+# slcio Files
+# ----------------------------------------------------------------------
+
+io = IOHandlerHelper(algs, io_svc)
 
 
-#For some reason running 1 and 2 crashes but 1 by itself worked
+# If the argument is for the test background files
+if my_opts.test:
+    print("Test Files Choosen.")
+    # Replace this with the path to your top‑level folder
+    slcio_folder = "/pnfs/desy.de/ilc/prod/ilc/mc-2020/ild/dst-merged/250-SetA/4f_WW_semileptonic/"
+
+    try:
+
+        # Collect LCIO files
+        slcio_files = collect_files(slcio_folder, file_type="slcio", max_files=1)
+        print(f"Found {len(slcio_files)} SLCIO file(s)")
+        io_svc.Input = []
+
+            # --- LCIO input ---
+        io.add_reader(slcio_files)  # This uses LcioEvent internally if .slcio
+
+        # --- Marlin processing ---
+        myProc = MarlinProcessorWrapper("Output_DST")
+        myProc.ProcessorType = "LCIOOutputProcessor"
+        myProc.Parameters = {
+             "LCIOOutputFile": ["test.slcio"],
+             "LCIOWriteMode": ["WRITE_NEW"]
+        }
+        algs.append(myProc)
+
+        # --- LCIO output ---
+        lcio_writer = io.add_lcio_writer("LCIOWriter")
+        lcio_writer.Parameters = {
+            "LCIOOutputFile": ["output.slcio"],
+            "LCIOWriteMode": ["WRITE_NEW"]
+        }
+
+        # ------------------------------------------------------------
+        # 3. EDM4hep output (ONLY selected collections)
+        # ------------------------------------------------------------
+        # (Optional) attach LCIO → EDM4hep converter to this processor
+        lcio2edm = Lcio2EDM4hepTool("Lcio2EDM4hepTool")
+        lcio2edm.collNameMapping = {
+            "MCParticles": "MCParticles",
+            "PandoraPFOs": "PandoraPFOs"
+        }
+        lcio2edm.convertAll = False  # convert only listed collections
+        myProc.Lcio2EDM4hepTool = lcio2edm
+        edm_writer = io.add_edm4hep_writer("output_minimal.root")
+
+        # IMPORTANT: whitelist only what you need
+        edm_writer.OutputCommands = [
+            "drop *",
+            "keep EventHeader",
+            "keep PandoraPFOs",
+            #"keep MCParticlesSkimmed",
+        ]
+
+        # --- Finalize & run ---
+        io.finalize_converters()  # If no conversion needed, this just finalizes
+
+    except Exception as e:
+        print(f"Error: {e}")
+
 # ----------------------------------------------------------------------
 # key4hep code
 # ----------------------------------------------------------------------
 
-evtSvc = k4DataSvc('EventDataSvc')
-evtSvc.inputs = source_list
 
-# If the argument is for the background files
-background_list = build_file_paths_regex(parent_dir, my_regex)
-if my_opts.background:
-    evtSvc.inputs = background_list
+collections = ["PandoraPFOs", "EventHeader"]#, "MCParticlesSkimmed"]
 
-if my_opts.test:
-    # Replace this with the path to your top‑level folder
-    top_folder = "/afs/desy.de/user/b/bortolet/code/edm4hep_output"
-
-    try:
-        files = collect_root_files(top_folder)
-        print(f"Found {len(files)} ROOT file(s):")
-        evtSvc.inputs = files
-        for f in files:
-            print(f)
-    except Exception as e:
-        print(f"Error: {e}")
-
-# Input: PODIO .root file with MCParticles
-podioinput = PodioInput("InputReader")
-
-collections = ["PandoraPFOs", "EventHeader", "MCParticlesSkimmed"]
-
-podioinput.collections = collections
+io_svc.CollectionNames = collections
 
 # create a MCProducer instance
-producer = MCProducerAlg("MCProducer")
-producer.MCParticleColl = "MCParticlesSkimmed"
-producer.OutputLevel = INFO
+#producer = MCProducerAlg("MCProducer")
+#producer.MCParticleColl = "MCParticlesSkimmed"
+#producer.OutputLevel = INFO
+
 
 # create a MCConsumer instance
 consumer = MCConsumerAlg("MCConsumer")
 consumer.RecoParticleColl = "PandoraPFOs"
 
+# Gaudi algorithms can't mix with slcio files
+if my_opts.test:
+    #algs.append(producer)
+    algs.append(consumer)
+
 ApplicationMgr(
     # provide list and order of algorithms
-    TopAlg=[podioinput, producer, consumer],
+    TopAlg=algs,
     EvtSel="NONE",
     EvtMax=10000,
-    ExtSvc=[evtSvc],
+    ExtSvc=[io_svc],
     OutputLevel=INFO
 )
