@@ -246,6 +246,14 @@ def build_file_paths_regex(
 
     return matched_strings
 
+# ----------------------------------------------------------------------
+# Randomize the seed
+# ----------------------------------------------------------------------
+
+import random
+from Configurables import UniqueIDGenSvc
+uidgen_svc = UniqueIDGenSvc()
+uidgen_svc.Seed = random.randint(0, 2**32 - 1)
 
 # ----------------------------------------------------------------------
 # io_svc code
@@ -302,7 +310,7 @@ if my_opts.test:
     try:
 
         # Collect LCIO files
-        slcio_files = collect_files(slcio_folder, file_type="slcio", max_files=1)
+        slcio_files = collect_files(slcio_folder, file_type="slcio", max_files=5620)
         print(f"Found {len(slcio_files)} SLCIO file(s)")
         io_svc.Input = []
 
@@ -336,7 +344,7 @@ if my_opts.test:
         }
         lcio2edm.convertAll = False  # convert only listed collections
         myProc.Lcio2EDM4hepTool = lcio2edm
-        edm_writer = io.add_edm4hep_writer("output_minimal.root")
+        #edm_writer = io.add_edm4hep_writer("output_minimal.root")
 
         # IMPORTANT: whitelist only what you need
         edm_writer.OutputCommands = [
@@ -380,7 +388,7 @@ ApplicationMgr(
     # provide list and order of algorithms
     TopAlg=algs,
     EvtSel="NONE",
-    EvtMax=10000,
+    EvtMax=10,
     ExtSvc=[io_svc],
     OutputLevel=INFO
 )
