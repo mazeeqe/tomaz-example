@@ -24,7 +24,7 @@ from k4FWCore.parseArgs import parser
 # Arguments to choose the type of input files for signal, background and test.
 parser.add_argument("--signal", action="store_true", help="Signal files simulation", default=False)
 parser.add_argument("--background", action="store_true", help="Background files simulation", default=False)
-parser.add_argument("--test", action="store_true", help="Simulation with test files", default=False)
+#parser.add_argument("--test", action="store_true", help="Simulation with test files", default=False)
 my_opts = parser.parse_known_args()[0]
 
 # ----------------------------------------------------------------------
@@ -35,36 +35,6 @@ import re
 from pathlib import Path
 from typing import List, Iterable, Union, Literal
 
-def collect_root_files(root_dir: str | os.PathLike, max_files: 10) -> List[Path]:
-    """
-    Recursively collect all ROOT files (*.root) under ``root_dir``.
-
-    Parameters
-    ----------
-    root_dir : str or Path‑like
-        The top‑level directory to start the search from.
-
-    Returns
-    -------
-    List[Path]
-        A list of ``Path`` objects, each pointing to a discovered ROOT file.
-    """
-    # Ensure we are working with a Path object
-    base_path = Path(root_dir).expanduser().resolve()
-
-    if not base_path.is_dir():
-        raise NotADirectoryError(f"The supplied path is not a directory: {base_path}")
-
-    # Use rglob which yields matches recursively
-    root_files = []
-
-    for p in base_path.rglob("*.root"):
-        if p.is_file():
-            root_files.append(str(p))
-            if len(root_files) >= max_files:
-                break   # stop once we’ve collected enough files
-
-    return root_files
 
 def collect_files(
     root_dir: str | os.PathLike,
@@ -172,80 +142,6 @@ def root_file_paths(
     return result
 
 
-def build_file_paths_regex(
-    parent_dir: Union[str, Path],
-    pattern: Union[str, List[str]],
-    *,
-    ignore_case: bool = False,
-) -> List[str]:
-    """
-    Scan ``parent_dir`` with ``pathlib`` and return a list of *strings* that
-    contain the absolute paths of files whose names match the supplied
-    regular‑expression pattern(s).
-
-    Parameters
-    ----------
-    parent_dir : str | pathlib.Path
-        Directory that holds the target files.
-
-    pattern : str | List[str]
-        One regex pattern or a list of patterns applied to the filename
-        (``Path.name``).  Example that matches the five ROOT files you listed::
-
-            r"^rv02-02-01\\.sv02-02\\.mILD_l5_o2_v02\\.E250-SetA\\.I500078\\."
-            r"P4f_zznu_sl\\.eL\\.pR\\.n000_\\d{3}\\.d_dst_00015656_\\d+\\.root$"
-
-    ignore_case : bool, default=False
-        If True, compile the regexes with ``re.IGNORECASE``.
-
-    Returns
-    -------
-    List[str]
-        Absolute path strings for each matching file, sorted alphabetically
-        by filename.
-
-    Example
-    -------
-    >>> regex = (
-    ...     r"^rv02-02-01\\.sv02-02\\.mILD_l5_o2_v02\\.E250-SetA\\.I500078\\."
-    ...     r"P4f_zznu_sl\\.eL\\.pR\\.n000_\\d{3}\\.d_dst_00015656_\\d+\\.root$"
-    ... )
-    >>> build_file_paths_regex("/my/data", regex)
-    ['/my/data/rv02-02-01.sv02-02.mILD_l5_o2_v02.E250-SetA.I500078.'
-     'P4f_zznu_sl.eL.pR.n000_001.d_dst_00015656_146.root',
-     '/my/data/rv02-02-01.sv02-02.mILD_l5_o2_v02.E250-SetA.I500078.'
-     'P4f_zznu_sl.eL.pR.n000_002.d_dst_00015656_70.root', …]
-    """
-    # --------------------------------------------------------------
-    # Normalise the directory path
-    parent_path = Path(parent_dir).expanduser().resolve()
-
-    if not parent_path.is_dir():
-        raise NotADirectoryError(f"'{parent_path}' is not a valid directory.")
-
-    # --------------------------------------------------------------
-    # Compile regex(es)
-    if isinstance(pattern, str):
-        patterns = [pattern]
-    else:
-        patterns = list(pattern)
-
-    flags = re.IGNORECASE if ignore_case else 0
-    compiled = [re.compile(p, flags) for p in patterns]
-
-    # --------------------------------------------------------------
-    # Collect matching files (non‑recursive – replace with rglob() for recursion)
-    matched_strings: List[str] = []
-    for entry in sorted(parent_path.iterdir()):   # deterministic order
-        if not entry.is_file():
-            continue
-
-        if any(regex.search(entry.name) for regex in compiled):
-            # Convert the Path object to its absolute string representation
-            matched_strings.append(str(entry))
-
-    return matched_strings
-
 # ----------------------------------------------------------------------
 # Randomize the seed
 # ----------------------------------------------------------------------
@@ -282,27 +178,12 @@ io_svc.Input = source_list
 # Background Files
 # ----------------------------------------------------------------------
 
-my_regex = (
-        r"^rv02-02-01\.sv02-02\.mILD_l5_o2_v02\.E250-SetA\.I500078\."
-        r"P4f_zznu_sl\.eL\.pR\.n000_\d{3}\.d_dst_00015656_\d+\.root$"
-    )
-
-#background_list = build_file_paths_regex(parent_dir, my_regex)
-if my_opts.background:
-    top_folder = "/afs/desy.de/user/b/bortolet/code/edm4hep_output"
-    root_files = collect_files(top_folder, file_type="root", max_files=1)
-    print("Background Files Choosen.")
-    io_svc.Input = root_files
-
-# ----------------------------------------------------------------------
-# slcio Files
-# ----------------------------------------------------------------------
 
 io = IOHandlerHelper(algs, io_svc)
 
 
 # If the argument is for the test background files
-if my_opts.test:
+if my_opts.background:
     print("Test Files Choosen.")
     # Replace this with the path to your top‑level folder
     slcio_folder = "/pnfs/desy.de/ilc/prod/ilc/mc-2020/ild/dst-merged/250-SetA/4f_WW_semileptonic/"
