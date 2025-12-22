@@ -1,0 +1,81 @@
+[2025-12-22 21:10:45] ==============================================
+[2025-12-22 21:10:45] Starting dataset: 4f_ZZWWMix_hadronic
+Available folders:
+Added 2f_Z_hadronic folder into argument --2f_Z_hadronic.
+Added 2f_eehiq_eL_pL folder into argument --2f_eehiq_eL_pL.
+Added 2f_eehiq_eL_pR folder into argument --2f_eehiq_eL_pR.
+Added 2f_eehiq_eR_pL folder into argument --2f_eehiq_eR_pL.
+Added 2f_eehiq_eR_pR folder into argument --2f_eehiq_eR_pR.
+Added 2f_hadronic_eL_pR folder into argument --2f_hadronic_eL_pR.
+Added 2f_hadronic_eR_pL folder into argument --2f_hadronic_eR_pL.
+Added 2f_leptonic_eL_pR folder into argument --2f_leptonic_eL_pR.
+Added 2f_leptonic_eR_pL folder into argument --2f_leptonic_eR_pL.
+Added 3f folder into argument --3f.
+Added 4f_WW_hadronic folder into argument --4f_WW_hadronic.
+Added 4f_WW_leptonic folder into argument --4f_WW_leptonic.
+Added 4f_WW_semileptonic folder into argument --4f_WW_semileptonic.
+Added 4f_ZZWWMix_hadronic folder into argument --4f_ZZWWMix_hadronic.
+Added 4f_ZZWWMix_leptonic folder into argument --4f_ZZWWMix_leptonic.
+Added 4f_ZZ_hadronic folder into argument --4f_ZZ_hadronic.
+Added 4f_ZZ_leptonic folder into argument --4f_ZZ_leptonic.
+Added 4f_ZZ_semileptonic folder into argument --4f_ZZ_semileptonic.
+Added 4f_ZZnunu_leptonic folder into argument --4f_ZZnunu_leptonic.
+Added 4f_ZZnunu_semileptonic folder into argument --4f_ZZnunu_semileptonic.
+Added 4f_singleW_leptonic folder into argument --4f_singleW_leptonic.
+Added 4f_singleW_semileptonic folder into argument --4f_singleW_semileptonic.
+Added 4f_singleZee_leptonic folder into argument --4f_singleZee_leptonic.
+Added 4f_singleZee_semileptonic folder into argument --4f_singleZee_semileptonic.
+Added 4f_singleZnunu_leptonic folder into argument --4f_singleZnunu_leptonic.
+Added 4f_singleZnunu_semileptonic folder into argument --4f_singleZnunu_semileptonic.
+Added 4f_singleZsingleWMix_leptonic folder into argument --4f_singleZsingleWMix_leptonic.
+Added 5f folder into argument --5f.
+Added 6f folder into argument --6f.
+Added aa_2f_Z_hadronic folder into argument --aa_2f_Z_hadronic.
+Added aa_2f_Z_leptonic folder into argument --aa_2f_Z_leptonic.
+Added aa_4f folder into argument --aa_4f.
+Added flavortag folder into argument --flavortag.
+Added higgs folder into argument --higgs.
+Added higgs_excl folder into argument --higgs_excl.
+Background Files Choosen.
+/pnfs/desy.de/ilc/prod/ilc/mc-2020/ild/dst-merged/250-SetA/4f_ZZWWMix_hadronic
+Error: name 'sub_folder' is not defined
+[k4run - INFO] k4run.main: --> MCConsumer
+[k4run - INFO] k4run.main: Option name: IOSvc.OutputLevel 0
+[k4run - INFO] k4run.main: Option name: IOSvc.CollectionNames ['PandoraPFOs', 'EventHeader']
+[k4run - INFO] k4run.main: Option name: IOSvc.Input ['/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00001.root', '/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00002.root', '/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00003.root', '/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00004.root', '/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00005.root', '/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00006.root', '/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00007.root', '/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00008.root', '/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00009.root', '/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00010.root', '/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00011.root', '/afs/desy.de/user/b/bortolet/code/tomaz-example/input_files/Dirac-Dst-E250-e2e2h_inv.eL.pR_bg-00012.root']
+[k4run - INFO] k4run.main: Option name: IOSvc.Output 
+[k4run - INFO] k4run.main: Option name: IOSvc.outputCommands ['keep *']
+[k4run - INFO] k4run.main: Option name: IOSvc.OutputType default
+[k4run - INFO] k4run.main: Option name: IOSvc.ImportedFromk4FWCore True
+[k4run - INFO] k4run.main: Option name: IOSvc.FirstEventEntry 0
+[k4run - INFO] k4run.main: Option name: MetadataSvc.OutputLevel 0
+[k4run - INFO] k4run.main: Option name: MCConsumer.OutputLevel 0
+[k4run - INFO] k4run.main: Option name: MCConsumer.NumEventsGenerated 10000
+[k4run - INFO] k4run.main: Option name: MCConsumer.CrossSection 1.0
+[k4run - INFO] k4run.main: Option name: MCConsumer.TargetLuminosity 1000.0
+[k4run - INFO] k4run.main: Option name: MCConsumer.CollisionEnergy 250.0
+[k4run - INFO] k4run.main: Option name: UniqueIDGenSvc.OutputLevel 0
+[k4run - INFO] k4run.main: Option name: UniqueIDGenSvc.Seed 2201450683
+[k4run - INFO] k4run.main: Option name: UniqueIDGenSvc.CheckDuplicates False
+[k4run - INFO] ApplicationMgr._setup_reader: Setting the reader to read the collections: ['PandoraPFOs', 'EventHeader']
+[k4run - INFO] ApplicationMgr._setup_reader: Initializing reader to read 100 events
+ApplicationMgr    SUCCESS 
+====================================================================================================================================
+                                                   Welcome to ApplicationMgr (GaudiCoreSvc v38r3)
+                                          running on naf-ilc22.desy.de on Mon Dec 22 21:10:47 2025
+====================================================================================================================================
+ApplicationMgr       INFO Application Manager Configured successfully
+TClass::Init      WARNING no dictionary for class edm4hep::Vector2i is available
+IOSvc                INFO Setting metadata frame
+ApplicationMgr       INFO Application Manager Initialized successfully
+ApplicationMgr       INFO Application Manager Started successfully
+MCConsumer           INFO Less than two muons found in event.
+MCConsumer           INFO Less than two muons found in event.
+MCConsumer           INFO Less than two muons found in event.
+MCConsumer           INFO Less than two muons found in event.
+ApplicationMgr       INFO Application Manager Stopped successfully
+EventLoopMgr         INFO Histograms converted successfully according to request.
+ApplicationMgr       INFO Application Manager Finalized successfully
+ApplicationMgr       INFO Application Manager Terminated successfully
+[2025-12-22 21:10:47] Simulation finished successfully
+[2025-12-22 21:10:47] Output moved to ../output_files/4f_ZZWWMix_hadronic/4f_ZZWWMix_hadronic_20251222_211012_hist.root
