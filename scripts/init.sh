@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-set -euo pipefail   # safety: exit on error, treat unset vars as errors
+set -u
+set -o pipefail
+# ⚠️ No exit, no set -e (SSH-safe)
 
 # File Options
 SIGNAL="signal"
@@ -67,21 +69,108 @@ transfer_file() {
     fi
 }
 
-echo "Starting signal files simulation"
+
+# ------------------------------------------------------------------
+# Configuration
+# ------------------------------------------------------------------
+COMMAND="k4run"
+SCRIPT_PATH="../example/options/run_example.py"
+
+DATASET_BASE_DIR="/pnfs/desy.de/ilc/prod/ilc/mc-2020/ild/dst-merged/250-SetA"
+
+SRC="./hist.root"
+BASE_OUT_DIR="../output_files"
+BASE_LOG_DIR="../logs"
+
+TIMESTAMP_GLOBAL=$(date +%Y%m%d_%H%M%S)
+
+# ------------------------------------------------------------------
+# Logging helper (dataset-local)
+# ------------------------------------------------------------------
+log() {
+    local LOGFILE="$1"
+    shift
+    echo "[$(date '+%F %T')] $*" | tee -a "${LOGFILE}"
+}
+
+# ------------------------------------------------------------------
+# Run one dataset
+# ------------------------------------------------------------------
+run_dataset() {
+    local DATASET="$1"
+    local LOGFILE="$2"
+
+    log "${LOGFILE}" "=============================================="
+    log "${LOGFILE}" "Starting dataset: ${DATASET}"
+
+    # ---- Run simulation -------------------------------------------
+    "${COMMAND}" "${SCRIPT_PATH}" "--${DATASET}" >>"${LOGFILE}" 2>&1
+    local RUN_STATUS=$?
+
+    if (( RUN_STATUS != 0 )); then
+        log "${LOGFILE}" "ERROR: Simulation failed (exit code ${RUN_STATUS})"
+        return 0
+    fi
+
+    log "${LOGFILE}" "Simulation finished successfully"
+
+    # ---- Move output ----------------------------------------------
+    local DATASET_OUT_DIR="${BASE_OUT_DIR}/${DATASET}"
+    local DEST_FILE="${DATASET}_${TIMESTAMP_GLOBAL}_hist.root"
+    local DEST_PATH="${DATASET_OUT_DIR}/${DEST_FILE}"
+
+    mkdir -p "${DATASET_OUT_DIR}"
+
+    if [[ -f "${SRC}" ]]; then
+        mv "${SRC}" "${DEST_PATH}"
+        log "${LOGFILE}" "Output moved to ${DEST_PATH}"
+    else
+        log "${LOGFILE}" "WARNING: Output file not found"
+    fi
+}
+
+# ------------------------------------------------------------------
+# Prepare base directories
+# ------------------------------------------------------------------
+mkdir -p "${BASE_OUT_DIR}"
+mkdir -p "${BASE_LOG_DIR}"
+
+# ------------------------------------------------------------------
+# Optional: permanent signal run (not from filesystem)
+# ------------------------------------------------------------------
+SIGNAL_LOG="${BASE_LOG_DIR}/signal_${TIMESTAMP_GLOBAL}.log"
+run_dataset "signal" "${SIGNAL_LOG}"
+
+# ------------------------------------------------------------------
+# Loop over dataset folders
+# ------------------------------------------------------------------
+for DATASET_PATH in "${DATASET_BASE_DIR}"/*; do
+    [[ -d "${DATASET_PATH}" ]] || continue
+
+    DATASET=$(basename "${DATASET_PATH}")
+    LOGFILE="${BASE_LOG_DIR}/${DATASET}_${TIMESTAMP_GLOBAL}.log"
+
+    run_dataset "${DATASET}" "${LOGFILE}"
+done
+
+echo "All datasets processed (check ${BASE_LOG_DIR} for logs)"
+
+
+#echo "Starting signal files simulation"
 
 # Run for the signal files
-run_python "$SIGNAL"
-transfer_file "$SIGNAL"
+#run_python "$SIGNAL"
+#transfer_file "$SIGNAL"
 
-echo "Starting background files simulation"
+#echo "Starting background files simulation"
 
 # Now for the Background files
-run_python "$BACKGROUND"
-transfer_file "$BACKGROUND"
+#run_python "$BACKGROUND"
+#transfer_file "$BACKGROUND"
 
-rm -f test.slcio output.slcio
+#rm -f test.slcio output.slcio
 
-echo "Finished simulation"
+#echo "Finished simulation"
 
 
 # Command that I used to copy the child folders from 250-SetA

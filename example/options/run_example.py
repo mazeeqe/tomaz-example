@@ -177,7 +177,6 @@ from k4FWCore.parseArgs import parser
 
 # Arguments to choose the type of input files for signal, background and test.
 parser.add_argument("--signal", action="store_true", help="Signal files simulation", default=False)
-#parser.add_argument("--background", action="store_true", help="Background files simulation", default=False)
 
 def list_child_folders(parent_dir: str | Path) -> list[str]:
     p = Path(parent_dir)
@@ -198,8 +197,6 @@ for i, c in enumerate(child_folders):
 
 
 my_opts = parser.parse_known_args()[0]
-dataset = choose_dataset_from_args(my_opts)
-print(f"Using dataset folder: {dataset}")
 # ----------------------------------------------------------------------
 # Randomize the seed
 # ----------------------------------------------------------------------
@@ -245,14 +242,13 @@ if not my_opts.signal:
     print("Background Files Choosen.")
     # Replace this with the path to your top‑level folder
     dataset_name = choose_dataset_from_args(my_opts)
-    input_dir = slcio_folder / dataset_name
+    input_dir = slcio_folder + dataset_name
     print(input_dir)
-    sub_folder = "4f_WW_semileptonic/"
 
     try:
 
         # Collect LCIO files
-        slcio_files = collect_files(slcio_folder+sub_folder, file_type="slcio", max_files=5620)
+        slcio_files = collect_files(input_dir, file_type="slcio", max_files=10000)
         print(f"Found {len(slcio_files)} SLCIO file(s) in {sub_folder}")
         io_svc.Input = []
 
@@ -307,9 +303,8 @@ io_svc.CollectionNames = collections
 consumer = MCConsumerAlg("MCConsumer")
 consumer.RecoParticleColl = "PandoraPFOs"
 
-# Gaudi algorithms can't mix with slcio files
-if my_opts.background:
-    algs.append(consumer)
+# Add consumer to my algorithms
+algs.append(consumer)
 
 ApplicationMgr(
     # provide list and order of algorithms
