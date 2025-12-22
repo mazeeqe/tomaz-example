@@ -119,6 +119,57 @@ def root_file_paths(
     return result
 
 
+import argparse
+
+
+def choose_dataset_from_args(
+    args: argparse.Namespace,
+    signal_name: str = "signal",
+) -> str:
+    """
+    Determine dataset folder name from argparse arguments.
+
+    Parameters
+    ----------
+    args : argparse.Namespace
+        Parsed argparse options.
+    signal_name : str
+        Name of the permanent signal flag.
+
+    Returns
+    -------
+    str
+        Dataset name (folder name).
+
+    Raises
+    ------
+    ValueError
+        If no or multiple dataset flags are enabled.
+    """
+    arg_dict = vars(args)
+
+    # 1) Special case: signal
+    if arg_dict.get(signal_name, False):
+        return signal_name
+
+    # 2) Find other enabled dataset flags
+    true_keys = [
+        k for k, v in arg_dict.items()
+        if isinstance(v, bool) and v is True and k != signal_name
+    ]
+
+    if not true_keys:
+        raise ValueError("No dataset option selected")
+
+    if len(true_keys) > 1:
+        raise ValueError(
+            f"Multiple dataset options selected: {true_keys}. "
+            "Please choose only one."
+        )
+
+    return true_keys[0]
+
+
 # ----------------------------------------------------------------------
 # Custom arguments
 # ----------------------------------------------------------------------
@@ -126,8 +177,7 @@ from k4FWCore.parseArgs import parser
 
 # Arguments to choose the type of input files for signal, background and test.
 parser.add_argument("--signal", action="store_true", help="Signal files simulation", default=False)
-parser.add_argument("--background", action="store_true", help="Background files simulation", default=False)
-my_opts = parser.parse_known_args()[0]
+#parser.add_argument("--background", action="store_true", help="Background files simulation", default=False)
 
 def list_child_folders(parent_dir: str | Path) -> list[str]:
     p = Path(parent_dir)
@@ -147,6 +197,9 @@ for i, c in enumerate(child_folders):
     available_backgrounds.append(c)
 
 
+my_opts = parser.parse_known_args()[0]
+dataset = choose_dataset_from_args(my_opts)
+print(f"Using dataset folder: {dataset}")
 # ----------------------------------------------------------------------
 # Randomize the seed
 # ----------------------------------------------------------------------
@@ -170,7 +223,7 @@ algs = []
 # ----------------------------------------------------------------------
 
 # The ROOT files sit in “…/tomaz-example/input_files”
-parent_dir = "../input_files"
+parent_dir = "../input_files/"
 
 # Get the 12 file paths
 source_list = root_file_paths(parent_dir,
@@ -191,7 +244,9 @@ io = IOHandlerHelper(algs, io_svc)
 if not my_opts.signal:
     print("Background Files Choosen.")
     # Replace this with the path to your top‑level folder
-    
+    dataset_name = choose_dataset_from_args(my_opts)
+    input_dir = slcio_folder / dataset_name
+    print(input_dir)
     sub_folder = "4f_WW_semileptonic/"
 
     try:
@@ -232,13 +287,6 @@ if not my_opts.signal:
         lcio2edm.convertAll = False  # convert only listed collections
         myProc.Lcio2EDM4hepTool = lcio2edm
 
-        # IMPORTANT: whitelist only what you need
-        edm_writer.OutputCommands = [
-            "drop *",
-            "keep EventHeader",
-            "keep PandoraPFOs",
-            #"keep MCParticlesSkimmed",
-        ]
 
         # --- Finalize & run ---
         io.finalize_converters()  # If no conversion needed, this just finalizes
@@ -261,14 +309,13 @@ consumer.RecoParticleColl = "PandoraPFOs"
 
 # Gaudi algorithms can't mix with slcio files
 if my_opts.background:
-    #algs.append(producer)
     algs.append(consumer)
 
 ApplicationMgr(
     # provide list and order of algorithms
     TopAlg=algs,
     EvtSel="NONE",
-    EvtMax=100000,
+    EvtMax=100,
     ExtSvc=[io_svc],
     OutputLevel=INFO
 )
