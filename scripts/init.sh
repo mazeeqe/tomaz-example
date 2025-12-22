@@ -79,4 +79,6 @@ echo "Starting background files simulation"
 run_python "$BACKGROUND"
 transfer_file "$BACKGROUND"
 
+rm -f test.slcio output.slcio
+
 echo "Finished simulation"
