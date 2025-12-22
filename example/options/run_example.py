@@ -5,16 +5,6 @@ from Gaudi.Configuration import *
 from Gaudi.Configuration import ApplicationMgr
 
 # ----------------------------------------------------------------------
-# Custom arguments
-# ----------------------------------------------------------------------
-from k4FWCore.parseArgs import parser
-
-# Arguments to choose the type of input files for signal, background and test.
-parser.add_argument("--signal", action="store_true", help="Signal files simulation", default=False)
-parser.add_argument("--background", action="store_true", help="Background files simulation", default=False)
-my_opts = parser.parse_known_args()[0]
-
-# ----------------------------------------------------------------------
 # Input importing
 # ----------------------------------------------------------------------
 import os
@@ -130,6 +120,34 @@ def root_file_paths(
 
 
 # ----------------------------------------------------------------------
+# Custom arguments
+# ----------------------------------------------------------------------
+from k4FWCore.parseArgs import parser
+
+# Arguments to choose the type of input files for signal, background and test.
+parser.add_argument("--signal", action="store_true", help="Signal files simulation", default=False)
+parser.add_argument("--background", action="store_true", help="Background files simulation", default=False)
+my_opts = parser.parse_known_args()[0]
+
+def list_child_folders(parent_dir: str | Path) -> list[str]:
+    p = Path(parent_dir)
+    return sorted([d.name for d in p.iterdir() if d.is_dir()])
+
+slcio_folder = "/pnfs/desy.de/ilc/prod/ilc/mc-2020/ild/dst-merged/250-SetA/"
+
+child_folders = list_child_folders(slcio_folder)
+if not child_folders:
+    raise RuntimeError("No child folders found")
+
+available_backgrounds = []
+print("Available folders:")
+for i, c in enumerate(child_folders):
+    parser.add_argument(f"--{c}", action="store_true", help="Background files simulation for {c}", default=False)
+    print(f"Added {c} folder into argument --{c}.")
+    available_backgrounds.append(c)
+
+
+# ----------------------------------------------------------------------
 # Randomize the seed
 # ----------------------------------------------------------------------
 
@@ -170,16 +188,17 @@ io = IOHandlerHelper(algs, io_svc)
 
 
 # If the argument is for the test background files
-if my_opts.background:
+if not my_opts.signal:
     print("Background Files Choosen.")
     # Replace this with the path to your top‑level folder
-    slcio_folder = "/pnfs/desy.de/ilc/prod/ilc/mc-2020/ild/dst-merged/250-SetA/4f_WW_semileptonic/"
+    
+    sub_folder = "4f_WW_semileptonic/"
 
     try:
 
         # Collect LCIO files
-        slcio_files = collect_files(slcio_folder, file_type="slcio", max_files=5620)
-        print(f"Found {len(slcio_files)} SLCIO file(s)")
+        slcio_files = collect_files(slcio_folder+sub_folder, file_type="slcio", max_files=5620)
+        print(f"Found {len(slcio_files)} SLCIO file(s) in {sub_folder}")
         io_svc.Input = []
 
             # --- LCIO input ---
@@ -232,15 +251,9 @@ if my_opts.background:
 # ----------------------------------------------------------------------
 
 
-collections = ["PandoraPFOs", "EventHeader"]#, "MCParticlesSkimmed"]
+collections = ["PandoraPFOs", "EventHeader"]
 
 io_svc.CollectionNames = collections
-
-# create a MCProducer instance
-#producer = MCProducerAlg("MCProducer")
-#producer.MCParticleColl = "MCParticlesSkimmed"
-#producer.OutputLevel = INFO
-
 
 # create a MCConsumer instance
 consumer = MCConsumerAlg("MCConsumer")
@@ -255,7 +268,7 @@ ApplicationMgr(
     # provide list and order of algorithms
     TopAlg=algs,
     EvtSel="NONE",
-    EvtMax=10,
+    EvtMax=100000,
     ExtSvc=[io_svc],
     OutputLevel=INFO
 )

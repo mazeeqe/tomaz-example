@@ -63,7 +63,7 @@ transfer_file() {
         echo "✅ Moved '${SRC}' → '${DEST}'"
     else
         echo "❌ Source file '${SRC}' not found. Did the Python script run correctly?"
-        exit 1
+        #exit 1
     fi
 }
 
@@ -82,3 +82,16 @@ transfer_file "$BACKGROUND"
 rm -f test.slcio output.slcio
 
 echo "Finished simulation"
+
+
+# Command that I used to copy the child folders from 250-SetA
+
+# Create the target directory if it doesn’t exist
+#mkdir -p "/afs/desy.de/user/b/bortolet/code/tomaz-example/output_files/"
+
+# Find only the first‑level directories and recreate them in the target
+#find "/pnfs/desy.de/ilc/prod/ilc/mc-2020/ild/dst-merged/250-SetA/" -mindepth 1 -maxdepth 1 -type d -exec bash -c '
+#    src="$1"
+#    dst="/afs/desy.de/user/b/bortolet/code/tomaz-example/output_files/$(basename "$src")"
+#    mkdir -p "$dst"
+#' _ {} \;
