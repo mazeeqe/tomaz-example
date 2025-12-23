@@ -114,6 +114,10 @@ run_dataset() {
 
     log "${LOGFILE}" "Simulation finished successfully"
 
+    rm -f test.slcio output.slcio
+
+    log "${LOGFILE}" "Deleted slcio files"
+
     # ---- Move output ----------------------------------------------
     local DATASET_OUT_DIR="${BASE_OUT_DIR}/${DATASET}"
     local DEST_FILE="${DATASET}_${TIMESTAMP_GLOBAL}_hist.root"
@@ -155,22 +159,11 @@ done
 
 echo "All datasets processed (check ${BASE_LOG_DIR} for logs)"
 
+cleanup() {
+    rm -f test.slcio output.slcio
+}
 
-#echo "Starting signal files simulation"
-
-# Run for the signal files
-#run_python "$SIGNAL"
-#transfer_file "$SIGNAL"
-
-#echo "Starting background files simulation"
-
-# Now for the Background files
-#run_python "$BACKGROUND"
-#transfer_file "$BACKGROUND"
-
-#rm -f test.slcio output.slcio
-
-#echo "Finished simulation"
+trap cleanup EXIT
 
 
 # Command that I used to copy the child folders from 250-SetA

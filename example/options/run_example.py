@@ -177,6 +177,7 @@ from k4FWCore.parseArgs import parser
 
 # Arguments to choose the type of input files for signal, background and test.
 parser.add_argument("--signal", action="store_true", help="Signal files simulation", default=False)
+parser.add_argument("--list", action="store_true", help="Print available background folders", default=False)
 
 def list_child_folders(parent_dir: str | Path) -> list[str]:
     p = Path(parent_dir)
@@ -189,14 +190,18 @@ if not child_folders:
     raise RuntimeError("No child folders found")
 
 available_backgrounds = []
-print("Available folders:")
 for i, c in enumerate(child_folders):
     parser.add_argument(f"--{c}", action="store_true", help="Background files simulation for {c}", default=False)
-    print(f"Added {c} folder into argument --{c}.")
+    #print(f"Added {c} folder into argument --{c}.")
     available_backgrounds.append(c)
 
 
 my_opts = parser.parse_known_args()[0]
+
+if my_opts.list:
+    print("Available background folders:")
+    for folders in available_backgrounds:
+        print(f"--{folders}")
 # ----------------------------------------------------------------------
 # Randomize the seed
 # ----------------------------------------------------------------------
@@ -249,7 +254,7 @@ if not my_opts.signal:
 
         # Collect LCIO files
         slcio_files = collect_files(input_dir, file_type="slcio", max_files=10000)
-        print(f"Found {len(slcio_files)} SLCIO file(s) in {sub_folder}")
+        print(f"Found {len(slcio_files)} SLCIO file(s) in {dataset_name}.")
         io_svc.Input = []
 
             # --- LCIO input ---
@@ -310,7 +315,7 @@ ApplicationMgr(
     # provide list and order of algorithms
     TopAlg=algs,
     EvtSel="NONE",
-    EvtMax=100,
+    EvtMax=10000,
     ExtSvc=[io_svc],
     OutputLevel=INFO
 )
