@@ -177,7 +177,7 @@ from k4FWCore.parseArgs import parser
 
 # Arguments to choose the type of input files for signal, background and test.
 parser.add_argument("--signal", action="store_true", help="Signal files simulation", default=False)
-parser.add_argument("--list", action="store_true", help="Print available background folders", default=False)
+parser.add_argument("--folders", action="store_true", help="Print available background folders", default=False)
 
 def list_child_folders(parent_dir: str | Path) -> list[str]:
     p = Path(parent_dir)
@@ -198,7 +198,7 @@ for i, c in enumerate(child_folders):
 
 my_opts = parser.parse_known_args()[0]
 
-if my_opts.list:
+if my_opts.folders:
     print("Available background folders:")
     for folders in available_backgrounds:
         print(f"--{folders}")
