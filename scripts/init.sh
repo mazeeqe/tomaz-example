@@ -104,7 +104,22 @@ run_dataset() {
     log "${LOGFILE}" "Starting dataset: ${DATASET}"
 
     # ---- Run simulation -------------------------------------------
-    "${COMMAND}" "${SCRIPT_PATH}" "--${DATASET}" >>"${LOGFILE}" 2>&1
+    # temporary capture
+    tmp_log=$(mktemp)
+
+    echo "▶ Running simulation for dataset: ${DATASET}" >> "${tmp_log}"
+
+    "${COMMAND}" "${SCRIPT_PATH}" "--${DATASET}" >>"${tmp_log}" 2>&1
+
+    # Now trim to first 1000 + last 50
+    {
+        head -n 1000 "${tmp_log}"
+        echo "… (log trimmed) …"
+        tail -n 50 "${tmp_log}"
+    } > "${LOGFILE}"
+
+    rm -f "${tmp_log}"
+
     local RUN_STATUS=$?
 
     if (( RUN_STATUS != 0 )); then

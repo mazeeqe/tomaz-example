@@ -208,8 +208,11 @@ if my_opts.folders:
 
 import random
 from Configurables import UniqueIDGenSvc
+from Configurables import RndmGenSvc
 uidgen_svc = UniqueIDGenSvc()
 uidgen_svc.Seed = random.randint(0, 2**32 - 1)
+rndm = RndmGenSvc()
+rndm.Seeds = [random.randint(0, 2**32 - 1)]
 
 # ----------------------------------------------------------------------
 # io_svc code
@@ -316,6 +319,6 @@ ApplicationMgr(
     TopAlg=algs,
     EvtSel="NONE",
     EvtMax=10000,
-    ExtSvc=[io_svc],
+    ExtSvc=[io_svc, rndm],
     OutputLevel=INFO
 )
