@@ -211,8 +211,6 @@ from Configurables import UniqueIDGenSvc
 from Configurables import RndmGenSvc
 uidgen_svc = UniqueIDGenSvc()
 uidgen_svc.Seed = random.randint(0, 2**32 - 1)
-rndm = RndmGenSvc()
-rndm.Seeds = [random.randint(0, 2**32 - 1)]
 
 # ----------------------------------------------------------------------
 # io_svc code
@@ -318,7 +316,7 @@ ApplicationMgr(
     # provide list and order of algorithms
     TopAlg=algs,
     EvtSel="NONE",
-    EvtMax=10000,
-    ExtSvc=[io_svc, rndm],
+    EvtMax=50000,
+    ExtSvc=[io_svc],
     OutputLevel=INFO
 )
