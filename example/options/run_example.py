@@ -316,7 +316,7 @@ ApplicationMgr(
     # provide list and order of algorithms
     TopAlg=algs,
     EvtSel="NONE",
-    EvtMax=50000,
+    EvtMax=100000,
     ExtSvc=[io_svc],
     OutputLevel=INFO
 )
