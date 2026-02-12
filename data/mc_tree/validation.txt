@@ -1,0 +1,494 @@
+Begging Validation
+process_id    402001
+n_files           66
+Name: 0, dtype: int64
+66
+process_id    402003
+n_files           64
+Name: 1, dtype: int64
+64
+process_id    402005
+n_files           65
+Name: 2, dtype: int64
+65
+process_id    402007
+n_files           62
+Name: 3, dtype: int64
+62
+process_id    402009
+n_files           62
+Name: 4, dtype: int64
+62
+process_id    402011
+n_files          143
+Name: 5, dtype: int64
+143
+process_id    402106
+n_files            4
+Name: 6, dtype: int64
+4
+process_id    402107
+n_files            6
+Name: 7, dtype: int64
+6
+process_id    402101
+n_files            8
+Name: 8, dtype: int64
+8
+process_id    402102
+n_files            8
+Name: 9, dtype: int64
+8
+process_id    402703
+n_files            8
+Name: 10, dtype: int64
+8
+process_id    402109
+n_files            4
+Name: 11, dtype: int64
+4
+process_id    402108
+n_files           14
+Name: 12, dtype: int64
+14
+process_id    402103
+n_files           10
+Name: 13, dtype: int64
+10
+process_id    402701
+n_files            7
+Name: 14, dtype: int64
+7
+process_id    402702
+n_files            8
+Name: 15, dtype: int64
+8
+process_id    402104
+n_files           34
+Name: 16, dtype: int64
+34
+process_id    402105
+n_files           35
+Name: 17, dtype: int64
+35
+process_id    402142
+n_files            3
+Name: 18, dtype: int64
+3
+process_id    402143
+n_files            6
+Name: 19, dtype: int64
+6
+process_id    402137
+n_files            8
+Name: 20, dtype: int64
+8
+process_id    402138
+n_files            8
+Name: 21, dtype: int64
+8
+process_id    402715
+n_files            7
+Name: 22, dtype: int64
+7
+process_id    402145
+n_files            3
+Name: 23, dtype: int64
+3
+process_id    402144
+n_files           14
+Name: 24, dtype: int64
+14
+process_id    402139
+n_files           10
+Name: 25, dtype: int64
+10
+process_id    402713
+n_files            7
+Name: 26, dtype: int64
+7
+process_id    402714
+n_files            7
+Name: 27, dtype: int64
+7
+process_id    402140
+n_files           33
+Name: 28, dtype: int64
+33
+process_id    402141
+n_files           34
+Name: 29, dtype: int64
+34
+process_id    402160
+n_files            4
+Name: 30, dtype: int64
+4
+process_id    402161
+n_files            6
+Name: 31, dtype: int64
+6
+process_id    402155
+n_files            8
+Name: 32, dtype: int64
+8
+process_id    402156
+n_files            8
+Name: 33, dtype: int64
+8
+process_id    402721
+n_files            8
+Name: 34, dtype: int64
+8
+process_id    402163
+n_files            4
+Name: 35, dtype: int64
+4
+process_id    402162
+n_files           15
+Name: 36, dtype: int64
+15
+process_id    402157
+n_files           10
+Name: 37, dtype: int64
+10
+process_id    402719
+n_files            8
+Name: 38, dtype: int64
+8
+process_id    402720
+n_files            8
+Name: 39, dtype: int64
+8
+process_id    402158
+n_files           35
+Name: 40, dtype: int64
+35
+process_id    402159
+n_files           36
+Name: 41, dtype: int64
+36
+process_id    402178
+n_files            3
+Name: 42, dtype: int64
+3
+process_id    402179
+n_files            6
+Name: 43, dtype: int64
+6
+process_id    402173
+n_files            8
+Name: 44, dtype: int64
+8
+process_id    402174
+n_files            7
+Name: 45, dtype: int64
+7
+process_id    402727
+n_files            7
+Name: 46, dtype: int64
+7
+process_id    402181
+n_files            3
+Name: 47, dtype: int64
+3
+process_id    402180
+n_files           12
+Name: 48, dtype: int64
+12
+process_id    402175
+n_files           10
+Name: 49, dtype: int64
+10
+process_id    402725
+n_files            7
+Name: 50, dtype: int64
+7
+process_id    402726
+n_files            7
+Name: 51, dtype: int64
+7
+process_id    402176
+n_files           32
+Name: 52, dtype: int64
+32
+process_id    402177
+n_files           33
+Name: 53, dtype: int64
+33
+process_id    402196
+n_files            3
+Name: 54, dtype: int64
+3
+process_id    402197
+n_files            6
+Name: 55, dtype: int64
+6
+process_id    402191
+n_files            8
+Name: 56, dtype: int64
+8
+process_id    402192
+n_files            7
+Name: 57, dtype: int64
+7
+process_id    402733
+n_files            7
+Name: 58, dtype: int64
+7
+process_id    402199
+n_files            3
+Name: 59, dtype: int64
+3
+process_id    402198
+n_files           12
+Name: 60, dtype: int64
+12
+process_id    402193
+n_files           10
+Name: 61, dtype: int64
+10
+process_id    402731
+n_files            7
+Name: 62, dtype: int64
+7
+process_id    402732
+n_files            7
+Name: 63, dtype: int64
+7
+process_id    402194
+n_files           32
+Name: 64, dtype: int64
+32
+process_id    402195
+n_files           33
+Name: 65, dtype: int64
+33
+process_id    402214
+n_files            8
+Name: 66, dtype: int64
+8
+process_id    402215
+n_files           11
+Name: 67, dtype: int64
+11
+process_id    402209
+n_files           25
+Name: 68, dtype: int64
+25
+process_id    402210
+n_files           15
+Name: 69, dtype: int64
+15
+process_id    402739
+n_files           12
+Name: 70, dtype: int64
+12
+process_id    402217
+n_files            8
+Name: 71, dtype: int64
+8
+process_id    402216
+n_files           35
+Name: 72, dtype: int64
+35
+process_id    402211
+n_files           17
+Name: 73, dtype: int64
+17
+process_id    402737
+n_files           12
+Name: 74, dtype: int64
+12
+process_id    402738
+n_files           12
+Name: 75, dtype: int64
+12
+process_id    402212
+n_files           59
+Name: 76, dtype: int64
+59
+process_id    402213
+n_files           57
+Name: 77, dtype: int64
+57
+process_id    500002
+n_files         4158
+Name: 78, dtype: int64
+4158
+process_id    500010
+n_files        42130
+Name: 79, dtype: int64
+42130
+process_id    500006
+n_files         2175
+Name: 80, dtype: int64
+2175
+process_id    500118
+n_files          362
+Name: 81, dtype: int64
+362
+process_id    500106
+n_files         2737
+Name: 82, dtype: int64
+2737
+process_id    500114
+n_files          702
+Name: 83, dtype: int64
+702
+process_id    500102
+n_files          448
+Name: 84, dtype: int64
+448
+process_id    500126
+n_files          104
+Name: 85, dtype: int64
+104
+process_id    500122
+n_files           30
+Name: 86, dtype: int64
+30
+process_id    500110
+n_files          143
+Name: 87, dtype: int64
+143
+process_id    500066
+n_files         7390
+Name: 88, dtype: int64
+7390
+process_id    500094
+n_files          206
+Name: 89, dtype: int64
+206
+process_id    500082
+n_files         5524
+Name: 90, dtype: int64
+5524
+process_id    500062
+n_files          810
+Name: 91, dtype: int64
+810
+process_id    500086
+n_files           13
+Name: 92, dtype: int64
+13
+process_id    500074
+n_files          277
+Name: 93, dtype: int64
+277
+process_id    500090
+n_files           11
+Name: 94, dtype: int64
+11
+process_id    500078
+n_files          192
+Name: 95, dtype: int64
+192
+process_id    500070
+n_files         6179
+Name: 96, dtype: int64
+6179
+process_id    500098
+n_files          173
+Name: 97, dtype: int64
+173
+process_id    402309
+n_files            3
+Name: 98, dtype: int64
+3
+process_id    402303
+n_files            3
+Name: 99, dtype: int64
+3
+process_id    402315
+n_files            3
+Name: 100, dtype: int64
+3
+process_id    402307
+n_files            3
+Name: 101, dtype: int64
+3
+process_id    402301
+n_files            3
+Name: 102, dtype: int64
+3
+process_id    402313
+n_files            3
+Name: 103, dtype: int64
+3
+process_id    402311
+n_files            3
+Name: 104, dtype: int64
+3
+process_id    402305
+n_files            3
+Name: 105, dtype: int64
+3
+process_id    402317
+n_files            3
+Name: 106, dtype: int64
+3
+process_id    500318
+n_files           21
+Name: 107, dtype: int64
+21
+process_id    500314
+n_files           21
+Name: 108, dtype: int64
+21
+process_id    500302
+n_files           20
+Name: 109, dtype: int64
+20
+process_id    500310
+n_files           19
+Name: 110, dtype: int64
+19
+process_id    500306
+n_files           20
+Name: 111, dtype: int64
+20
+process_id    500338
+n_files           23
+Name: 112, dtype: int64
+23
+process_id    500334
+n_files           21
+Name: 113, dtype: int64
+21
+process_id    500322
+n_files           20
+Name: 114, dtype: int64
+20
+process_id    500330
+n_files           20
+Name: 115, dtype: int64
+20
+process_id    500326
+n_files           20
+Name: 116, dtype: int64
+20
+process_id    410001
+n_files           55
+Name: 117, dtype: int64
+55
+process_id    410002
+n_files           50
+Name: 118, dtype: int64
+50
+process_id    410005
+n_files           48
+Name: 119, dtype: int64
+48
+process_id    410006
+n_files           68
+Name: 120, dtype: int64
+68
+process_id    410003
+n_files           47
+Name: 121, dtype: int64
+47
+process_id    410004
+n_files           48
+Name: 122, dtype: int64
+48
+

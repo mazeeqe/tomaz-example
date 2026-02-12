@@ -1,0 +1,4 @@
+/ssh/config.sh
+/logs/
+build/test.slcio
+build/output.slcio
