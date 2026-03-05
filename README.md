@@ -1,6 +1,6 @@
 # A Study of Invisible Higgs Decays at a Future $e^+e^-$
- Collider Using the $Z(\mu^+\mu^-)$
- Recoil Spectrum $\sqrt{s}=250\,\text{GeV}$
+# Collider Using the $Z(\mu^+\mu^-)$
+# Recoil Spectrum $\sqrt{s}=250\,\text{GeV}$
 
 
 ## Code repository for my Master's Thesis at Brazilian Center for Physics Research,
