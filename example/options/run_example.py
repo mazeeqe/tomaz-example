@@ -1,6 +1,6 @@
 from k4FWCore import IOSvc
 from k4MarlinWrapper.io_helpers import IOHandlerHelper
-from Configurables import MarlinProcessorWrapper, MCConsumerAlg, MarlinProcessorWrapper, Lcio2EDM4hepTool#MCProducerAlg
+from Configurables import MarlinProcessorWrapper, MCConsumerAlg, Lcio2EDM4hepTool
 from Gaudi.Configuration import *
 from Gaudi.Configuration import ApplicationMgr
 

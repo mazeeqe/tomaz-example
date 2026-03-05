@@ -1,7 +1,11 @@
-# Monte Carlo Simulation of the Invisible Higgs Decay at the International Linear Collider
+# A Study of Invisible Higgs Decays at a Future $e^+e^-$
+ Collider Using the $Z(\mu^+\mu^-)$
+ Recoil Spectrum $\sqrt{s}=250\,\text{GeV}$
+
 
 ## Code repository for my Master's Thesis at Brazilian Center for Physics Research,
-Date: 16 of October, 2025
+## Date: 4 of March, 2026
+
 ### Tomáz Antonio Bortoletto Giansante,
 
 ### Supervisor: Carsten Hensel
@@ -10,7 +14,7 @@ Date: 16 of October, 2025
 
 Start by sourcing the desired Key4hep version
 ```bash
-source /cvmfs/sw.hsf.org/key4hep/setup.sh -r 2025-01-28
+source /cvmfs/sw.hsf.org/key4hep/setup.sh -r 2025-05-29
 git clone https://github.com/mazeeqe/tomaz-example.git
 ```
 
@@ -33,16 +37,20 @@ make install
 ```
 
 ### Running the code,
-The simulation is divided into two runs, for the signal and background files.
-The `init.sh` file does both runs and creates two separate output files. 
-To run the simulation, do the following command.
+
+An `bash` script is available that does the simulations for the signal and all process ids. Within the `build` folder, run:
 
 ```bash
-cd build
-source init.sh
+chmod +x ../scripts/init.sh
 ```
 
-After the Simulation is finished, the resulting files, `signal_hist.root` and `background_hist.root`, are located `output_files` folder.
+this will turn the \texttt{init.sh} into a functional bash script, then do:
+
+```bash
+../scripts/init.sh
+```
+
+after each simulated process, the `.root` files produced are moved to their respective folder in 
 
 ### Individual Run
 
@@ -65,8 +73,10 @@ k4run ../example/options/run_example.py --signal
 Background run:
 ```bash
 cd build
-k4run ../example/options/run_example.py --background
+k4run ../example/options/run_example.py --XXXXXX
 ```
+
+An additional argument is available to split between signal, `--signal`, and background simulation, `--XXXXXX`, where `XXXXX` is an process id, the full list of available ids is present at ANNEX C of my thesis.
 
 ### Graphs and Plots
 
