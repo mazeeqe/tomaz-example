@@ -4,7 +4,7 @@
 ## Code repository for my Master's Thesis at Brazilian Center for Physics Research
 ## Date: 4 of March, 2026
 
-### Tomáz Antonio Bortoletto Giansante,
+### Tomáz Antonio Bortoletto Giansante
 
 ### Supervisor: Carsten Hensel
 
